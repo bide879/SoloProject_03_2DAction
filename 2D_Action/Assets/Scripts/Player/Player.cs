@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
     /// <summary>
     /// 이동속도
     /// </summary>
-    private float moveSpeed = 4.0f;
+    private float moveSpeed = 5.0f;
     public float MoveSpeed => moveSpeed;
 
     /// <summary>
@@ -17,12 +18,17 @@ public class Player : MonoBehaviour
     private float jumpPower = 15.0f;
     public float JumpPower => jumpPower;
 
+    private int jumpCount = 0;
+
     /// <summary>
-    /// 이동속도
+    /// 보통 이동속도
     /// </summary>
     private float normalSpeed;
 
-    private float dashSpeed = 6.0f;
+    /// <summary>
+    /// 대시 속도
+    /// </summary>
+    private float dashSpeed = 8.0f;
     public float DashSpeed => dashSpeed;
 
     /// <summary>
@@ -38,7 +44,8 @@ public class Player : MonoBehaviour
     private bool isGrounded = true;
 
     Animator animator;
-
+    Ghost ghost;
+    
     /// <summary>
     /// 애니메이터용 해시값
     /// </summary>
@@ -52,7 +59,16 @@ public class Player : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
 
         normalSpeed = moveSpeed;
+        ghost = GetComponentInChildren<Ghost>();
     }
+
+    private void Start()
+    {
+        ghost.makeGhost = false;
+
+
+    }
+
 
     private void OnEnable()
     {
@@ -99,13 +115,18 @@ public class Player : MonoBehaviour
                 {
                     Debug.Log("바닥에 닿음");
                     animator.SetBool(IsJumpHash, false);
+                    if (!isGrounded)
+                    {
+                        StartCoroutine(GraduallyReduceSpeed());
+                    }
                     isGrounded = true;
+                    jumpCount = 0;
                 }
             }
         }
     }
 
-    private void OnMove(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    private void OnMove(InputAction.CallbackContext context)
     {
         inputDirection.x = context.ReadValue<Vector2>().x;
         animator.SetBool(IsMoveHash, true);
@@ -119,42 +140,72 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnStop(UnityEngine.InputSystem.InputAction.CallbackContext _)
+    private void OnStop(InputAction.CallbackContext _)
     {
         inputDirection.x = 0.0f;
         animator.SetBool(IsMoveHash, false);
     }
 
-    private void OnJump(UnityEngine.InputSystem.InputAction.CallbackContext _)
+    private void OnJump(InputAction.CallbackContext _)
     {
         Jump();
     }
 
     private void Jump()
     {
-        Debug.Log("점프 누름");
-        rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
-        animator.SetBool(IsJumpHash, true);
-        isGrounded = false;
+
+        if(!isGrounded && jumpCount < 2)
+        {
+            if(rigid.velocity.y < 0)
+            {
+                rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+                animator.SetBool(IsJumpHash, true);
+                isGrounded = false;
+                jumpCount++;           
+            }
+        }
+        else if(isGrounded)
+        {
+            rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+            animator.SetBool(IsJumpHash, true);
+            isGrounded = false;
+            jumpCount++;
+        }
     }
 
-    private void OnDash(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    private void OnDash(InputAction.CallbackContext context)
     {
         if (!context.canceled)
         {
             if(isGrounded)
             {
-                Debug.Log("대시 누름");
+                StopAllCoroutines();
                 moveSpeed = dashSpeed;
+                ghost.makeGhost = true;
             }
         }
         else
         {
             if (isGrounded)
             {
-                Debug.Log("대시 땜");
-                moveSpeed = normalSpeed;
+                StartCoroutine(GraduallyReduceSpeed());
             }
         }
     }
+
+    private IEnumerator GraduallyReduceSpeed()
+    {
+        float duration = 0.5f; // 속도를 줄이는 데 걸리는 시간
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            moveSpeed = Mathf.Lerp(dashSpeed, normalSpeed, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        ghost.makeGhost = false;
+        moveSpeed = normalSpeed;
+    }
+
 }

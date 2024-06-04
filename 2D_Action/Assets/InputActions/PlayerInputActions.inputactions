@@ -43,30 +43,30 @@
                 },
                 {
                     "name": "Skill",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "5bcb0599-dc09-46ff-b9f5-d1eead09bda7",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Pause",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "c626a68d-cade-427b-a9d3-68598f0adcc2",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Ultimate",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "76e69dd9-8099-4d7c-88ac-001a71dd4e79",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -139,7 +139,7 @@
                 {
                     "name": "",
                     "id": "bf4ab2d7-11aa-454e-9364-359bfced65db",
-                    "path": "<Keyboard>/i",
+                    "path": "<Keyboard>/o",
                     "interactions": "",
                     "processors": "",
                     "groups": "KM",
