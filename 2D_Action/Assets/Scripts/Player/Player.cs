@@ -45,12 +45,17 @@ public class Player : MonoBehaviour
 
     Animator animator;
     Ghost ghost;
-    
+
+    public bool isAttackPush = false;
+    public bool IsAttackPush => isAttackPush;
+
     /// <summary>
     /// 애니메이터용 해시값
     /// </summary>
     readonly int IsMoveHash = Animator.StringToHash("IsMove");
     readonly int IsJumpHash = Animator.StringToHash("IsJump");
+    readonly int OnAttackHash = Animator.StringToHash("OnAttack");
+    readonly int IsAttackPushHash = Animator.StringToHash("IsAttackPush");
 
     private void Awake()
     {
@@ -65,8 +70,6 @@ public class Player : MonoBehaviour
     private void Start()
     {
         ghost.makeGhost = false;
-
-
     }
 
 
@@ -78,10 +81,14 @@ public class Player : MonoBehaviour
         inputActions.Player.Jump.performed += OnJump;
         inputActions.Player.Dash.performed += OnDash;
         inputActions.Player.Dash.canceled += OnDash;
+        inputActions.Player.Attack.performed += OnAttack;
+        //inputActions.Player.Attack.canceled += OnAttack;
     }
 
     private void OnDisable()
     {
+        //inputActions.Player.Attack.canceled -= OnAttack;
+        inputActions.Player.Attack.performed -= OnAttack;
         inputActions.Player.Dash.canceled -= OnDash;
         inputActions.Player.Dash.performed -= OnDash;
         inputActions.Player.Jump.performed -= OnJump;
@@ -206,6 +213,12 @@ public class Player : MonoBehaviour
         }
         ghost.makeGhost = false;
         moveSpeed = normalSpeed;
+    }
+
+    private void OnAttack(InputAction.CallbackContext context)
+    {
+        animator.SetBool(IsAttackPushHash, isAttackPush);
+        animator.SetTrigger(OnAttackHash);
     }
 
 }
