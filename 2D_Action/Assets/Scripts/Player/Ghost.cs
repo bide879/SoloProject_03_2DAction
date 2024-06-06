@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ghost : MonoBehaviour
+public class Ghost : RecycleObject
 {
     public float ghostDelay;
     private float ghostDelayTime;
     public GameObject ghost;
-    public bool makeGhost;
+    public bool makeGhost = false;
     public bool playerOnAttack;
 
     void Start()
@@ -27,25 +27,8 @@ public class Ghost : MonoBehaviour
             }
             else
             {
-                /*
-                GameObject currentGhost = Factory.Instance.GetSpownGhost(this.ghost, this.transform.position, this.transform.rotation).gameObject;
-                Sprite currentSprite = this.GetComponent<SpriteRenderer>().sprite;
-                currentGhost.transform.localScale = new Vector3(
-                    GameManager.Instance.Player.transform.localScale.x * this.transform.localScale.x,
-                    this.transform.localScale.y,
-                    this.transform.localScale.z
-                );
-                currentGhost.GetComponent<SpriteRenderer>().sprite = currentSprite;
+                Factory.Instance.GetSpownGhost(this.ghost, this.transform.position, this.transform.rotation);
                 this.ghostDelayTime = this.ghostDelay;
-                */             
-                
-                GameObject currentGhost = Instantiate(this.ghost, this.transform.position, this.transform.rotation);
-                Sprite currentSprite = this.GetComponent<SpriteRenderer>().sprite;
-                currentGhost.transform.localScale = new Vector3(GameManager.Instance.Player.transform.localScale.x * this.transform.localScale.x, this.transform.localScale.y, this.transform.localScale.z);
-                currentGhost.GetComponent<SpriteRenderer>().sprite = currentSprite;
-                this.ghostDelayTime = this.ghostDelay;
-                Destroy(currentGhost, 0.6f);
-                
             }
             
         }

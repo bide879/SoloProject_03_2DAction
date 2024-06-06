@@ -74,11 +74,11 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 3
   m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.26, y: 1.16}
+  m_Size: {x: 0.87, y: 0.87}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f8debe5af25d4f4b8f395a6b860490f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAttackPush: 0
 --- !u!50 &1103288943894112034
 Rigidbody2D:
   serializedVersion: 4
@@ -146,7 +147,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -167,7 +168,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 5147689780251985396}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: d897f3827f8c66b47b8f98eb63959049, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -285,3 +286,4 @@ MonoBehaviour:
   ghostDelay: 0.15
   ghost: {fileID: 3272209838926387599, guid: b6883563e61ccf646b36fdfdee162852, type: 3}
   makeGhost: 0
+  playerOnAttack: 0

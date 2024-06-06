@@ -15,8 +15,8 @@ public class Factory : Singleton<Factory>
     public GhostChild GetSpownGhost(GameObject ghostPrefab, Vector3 position, Quaternion rotation)
     {
         GhostChild ghost = ghostPool?.GetObject();
-        //ghost.transform.rotation = rotation;
-        //ghost.transform.position = position;
+        ghost.transform.rotation = rotation;
+        ghost.transform.position = position;
         return ghost;
     }
 }

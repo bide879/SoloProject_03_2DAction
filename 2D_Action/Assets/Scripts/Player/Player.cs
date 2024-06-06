@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     /// <summary>
     /// 점프 높이
     /// </summary>
-    private float jumpPower = 15.0f;
+    private float jumpPower = 10.0f;
     public float JumpPower => jumpPower;
 
     private int jumpCount = 0;
@@ -127,6 +127,7 @@ public class Player : MonoBehaviour
                         StartCoroutine(GraduallyReduceSpeed());
                     }
                     isGrounded = true;
+                    canJumpAttack = true;
                     jumpCount = 0;
                 }
             }
@@ -153,22 +154,25 @@ public class Player : MonoBehaviour
         animator.SetBool(IsMoveHash, false);
     }
 
-    private void OnJump(InputAction.CallbackContext _)
+    private void OnJump(InputAction.CallbackContext context)
     {
-        Jump();
+        Jump();  
     }
+
+    bool canJumpAttack = true;
 
     private void Jump()
     {
 
         if(!isGrounded && jumpCount < 2)
         {
-            if(rigid.velocity.y < 0)
+            if(rigid.velocity.y < 0.0)
             {
                 rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
                 animator.SetBool(IsJumpHash, true);
                 isGrounded = false;
-                jumpCount++;           
+                canJumpAttack = true;
+                jumpCount++;
             }
         }
         else if(isGrounded)
@@ -176,6 +180,7 @@ public class Player : MonoBehaviour
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             animator.SetBool(IsJumpHash, true);
             isGrounded = false;
+            canJumpAttack = true;
             jumpCount++;
         }
     }
@@ -215,10 +220,27 @@ public class Player : MonoBehaviour
         moveSpeed = normalSpeed;
     }
 
+    private bool canAttack = true;
+    //private float attackDelay = 0.23f;
+    private float attackDelay = 0.16f;
     private void OnAttack(InputAction.CallbackContext context)
     {
-        animator.SetBool(IsAttackPushHash, isAttackPush);
-        animator.SetTrigger(OnAttackHash);
+        if (canAttack && canJumpAttack)
+        {
+            animator.SetBool(IsAttackPushHash, isAttackPush);
+            animator.SetTrigger(OnAttackHash);
+            StartCoroutine(HandleAttack());  
+        }
     }
 
+    private IEnumerator HandleAttack()
+    {
+        canAttack = false;
+        if (!isGrounded)
+        {
+            canJumpAttack = false;
+        }
+        yield return new WaitForSeconds(attackDelay);
+        canAttack = true;
+    }
 }
