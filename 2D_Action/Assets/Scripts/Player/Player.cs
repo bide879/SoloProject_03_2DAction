@@ -187,10 +187,12 @@ public class Player : MonoBehaviour
 
     private void OnDash(InputAction.CallbackContext context)
     {
+        
         if (!context.canceled)
         {
             if(isGrounded)
             {
+                Factory.Instance.GetSpownDashEffect(this.transform.position, this.transform.rotation);
                 StopAllCoroutines();
                 moveSpeed = dashSpeed;
                 ghost.makeGhost = true;
