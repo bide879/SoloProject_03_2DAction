@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     /// <summary>
     /// 대시 속도
     /// </summary>
-    private float dashSpeed = 8.0f;
+    private float dashSpeed = 10.0f;
     public float DashSpeed => dashSpeed;
 
     /// <summary>
@@ -136,15 +136,22 @@ public class Player : MonoBehaviour
 
     private void OnMove(InputAction.CallbackContext context)
     {
-        inputDirection.x = context.ReadValue<Vector2>().x;
-        animator.SetBool(IsMoveHash, true);
-        if (0 > inputDirection.x)
+        inputDirection = context.ReadValue<Vector2>();
+        if (inputDirection.x != 0)
         {
-            transform.localScale = new Vector3(-1f, 1f, 1f);
+            animator.SetBool(IsMoveHash, true);
+            if (inputDirection.x < 0)
+            {
+                transform.localScale = new Vector3(-1f, 1f, 1f);
+            }
+            else
+            {
+                transform.localScale = new Vector3(1f, 1f, 1f);
+            }
         }
         else
         {
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            animator.SetBool(IsMoveHash, false);
         }
     }
 
@@ -222,17 +229,46 @@ public class Player : MonoBehaviour
         moveSpeed = normalSpeed;
     }
 
+
+ // ---------------------------------------- 공격 -----------------------------------------
+
     private bool canAttack = true;
     //private float attackDelay = 0.23f;
     private float attackDelay = 0.16f;
+    private Vector2 previousInputDirection;
+    private float previousMoveSpeed;
+
     private void OnAttack(InputAction.CallbackContext context)
     {
         if (canAttack && canJumpAttack)
         {
+            if (isGrounded)
+            {
+                // 공격 시작 전 이동을 멈춤
+                previousInputDirection = inputDirection;       
+                if (isGrounded)
+                {
+                    previousMoveSpeed = moveSpeed;
+                    moveSpeed = 0.0f;
+                }        
+                inputDirection = Vector2.zero;
+                animator.SetBool(IsMoveHash, false);
+            }
+
             animator.SetBool(IsAttackPushHash, isAttackPush);
             animator.SetTrigger(OnAttackHash);
-            StartCoroutine(HandleAttack());  
+            StartCoroutine(HandleAttack());
         }
+        if (inputDirection.y < 0 && !isGrounded)
+        {
+            PerformAirDownAttack();
+        }
+    }
+    private void PerformAirDownAttack()
+    {
+        // Perform the downward attack logic here
+        Debug.Log("Performing Air Down Attack");
+        // Add your custom logic for the air down attack
     }
 
     private IEnumerator HandleAttack()
@@ -244,5 +280,16 @@ public class Player : MonoBehaviour
         }
         yield return new WaitForSeconds(attackDelay);
         canAttack = true;
+
+        // 공격이 끝나면 이전 방향으로 다시 이동
+        inputDirection = previousInputDirection;
+        if (isGrounded)
+        {
+            moveSpeed = previousMoveSpeed;
+        }
+        if (inputDirection.x != 0)
+        {
+            animator.SetBool(IsMoveHash, true);
+        }
     }
 }
