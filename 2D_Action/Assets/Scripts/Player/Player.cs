@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     /// <summary>
     /// 대시 속도
     /// </summary>
-    private float dashSpeed = 10.0f;
+    private float dashSpeed = 8.0f;
     public float DashSpeed => dashSpeed;
 
     /// <summary>
@@ -54,8 +54,12 @@ public class Player : MonoBehaviour
     /// </summary>
     readonly int IsMoveHash = Animator.StringToHash("IsMove");
     readonly int IsJumpHash = Animator.StringToHash("IsJump");
+
     readonly int OnAttackHash = Animator.StringToHash("OnAttack");
     readonly int IsAttackPushHash = Animator.StringToHash("IsAttackPush");
+    readonly int OnDownAttackHash = Animator.StringToHash("OnDownAttack");
+
+    readonly int OnSkillHash = Animator.StringToHash("OnSkill");
 
     private void Awake()
     {
@@ -82,12 +86,14 @@ public class Player : MonoBehaviour
         inputActions.Player.Dash.performed += OnDash;
         inputActions.Player.Dash.canceled += OnDash;
         inputActions.Player.Attack.performed += OnAttack;
+        inputActions.Player.Skill.performed += OnSkill;
         //inputActions.Player.Attack.canceled += OnAttack;
     }
 
     private void OnDisable()
     {
         //inputActions.Player.Attack.canceled -= OnAttack;
+        inputActions.Player.Skill.performed -= OnSkill;
         inputActions.Player.Attack.performed -= OnAttack;
         inputActions.Player.Dash.canceled -= OnDash;
         inputActions.Player.Dash.performed -= OnDash;
@@ -117,14 +123,17 @@ public class Player : MonoBehaviour
             RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, Vector3.down, 1, LayerMask.GetMask("Ground"));
             if (rayHit.collider != null)
             {
-                Debug.Log("바닥 확인");
                 if (rayHit.distance < 1f)
                 {
-                    Debug.Log("바닥에 닿음");
                     animator.SetBool(IsJumpHash, false);
                     if (!isGrounded)
                     {
                         StartCoroutine(GraduallyReduceSpeed());
+                    }
+                    if (isAirDownAttack)
+                    {
+                        rigid.gravityScale = 2f;
+                        isAirDownAttack = false;
                     }
                     isGrounded = true;
                     canJumpAttack = true;
@@ -136,6 +145,10 @@ public class Player : MonoBehaviour
 
     private void OnMove(InputAction.CallbackContext context)
     {
+        if (context.canceled)
+        {
+            inputDirection = Vector2.zero;
+        }
         inputDirection = context.ReadValue<Vector2>();
         if (inputDirection.x != 0)
         {
@@ -157,13 +170,13 @@ public class Player : MonoBehaviour
 
     private void OnStop(InputAction.CallbackContext _)
     {
-        inputDirection.x = 0.0f;
+        inputDirection = Vector2.zero;
         animator.SetBool(IsMoveHash, false);
     }
 
     private void OnJump(InputAction.CallbackContext context)
     {
-        Jump();  
+        Jump();
     }
 
     bool canJumpAttack = true;
@@ -171,9 +184,9 @@ public class Player : MonoBehaviour
     private void Jump()
     {
 
-        if(!isGrounded && jumpCount < 2)
+        if (!isGrounded && jumpCount < 2)
         {
-            if(rigid.velocity.y < 0.0)
+            if (rigid.velocity.y < 0.0)
             {
                 rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
                 animator.SetBool(IsJumpHash, true);
@@ -182,7 +195,7 @@ public class Player : MonoBehaviour
                 jumpCount++;
             }
         }
-        else if(isGrounded)
+        else if (isGrounded)
         {
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             animator.SetBool(IsJumpHash, true);
@@ -194,13 +207,14 @@ public class Player : MonoBehaviour
 
     private void OnDash(InputAction.CallbackContext context)
     {
-        
+
         if (!context.canceled)
         {
-            if(isGrounded)
-            {
+            if (isGrounded)
+            {           
                 Factory.Instance.GetSpownDashEffect(this.transform.position, this.transform.rotation);
                 StopAllCoroutines();
+                rigid.AddForce((Vector2.right * inputDirection.x) * 15.0f, ForceMode2D.Impulse);
                 moveSpeed = dashSpeed;
                 ghost.makeGhost = true;
             }
@@ -230,45 +244,50 @@ public class Player : MonoBehaviour
     }
 
 
- // ---------------------------------------- 공격 -----------------------------------------
+    // ---------------------------------------- 공격 -----------------------------------------
 
     private bool canAttack = true;
     //private float attackDelay = 0.23f;
     private float attackDelay = 0.16f;
     private Vector2 previousInputDirection;
     private float previousMoveSpeed;
+    private bool isAirDownAttack = false;
 
     private void OnAttack(InputAction.CallbackContext context)
     {
+        Debug.Log($"x : {inputDirection.x}, y : {inputDirection.y}");
         if (canAttack && canJumpAttack)
         {
             if (isGrounded)
             {
                 // 공격 시작 전 이동을 멈춤
-                previousInputDirection = inputDirection;       
+                previousInputDirection = inputDirection;
                 if (isGrounded)
                 {
                     previousMoveSpeed = moveSpeed;
                     moveSpeed = 0.0f;
-                }        
+                }
                 inputDirection = Vector2.zero;
                 animator.SetBool(IsMoveHash, false);
             }
-
             animator.SetBool(IsAttackPushHash, isAttackPush);
             animator.SetTrigger(OnAttackHash);
             StartCoroutine(HandleAttack());
         }
         if (inputDirection.y < 0 && !isGrounded)
         {
-            PerformAirDownAttack();
+            AirDownAttack();
         }
     }
-    private void PerformAirDownAttack()
+    private void AirDownAttack()
     {
-        // Perform the downward attack logic here
-        Debug.Log("Performing Air Down Attack");
-        // Add your custom logic for the air down attack
+        isAirDownAttack = true;
+        previousInputDirection = inputDirection;
+        previousMoveSpeed = moveSpeed;
+        moveSpeed = 0.0f;
+        rigid.gravityScale = 0.5f;
+        animator.SetTrigger(OnDownAttackHash);
+        StartCoroutine(HandleAttack());
     }
 
     private IEnumerator HandleAttack()
@@ -279,7 +298,13 @@ public class Player : MonoBehaviour
             canJumpAttack = false;
         }
         yield return new WaitForSeconds(attackDelay);
+
         canAttack = true;
+
+        if (isAirDownAttack)
+        {
+            rigid.gravityScale = 5f;
+        }
 
         // 공격이 끝나면 이전 방향으로 다시 이동
         inputDirection = previousInputDirection;
@@ -291,5 +316,11 @@ public class Player : MonoBehaviour
         {
             animator.SetBool(IsMoveHash, true);
         }
+    }
+
+    private void OnSkill(InputAction.CallbackContext context)
+    {
+        animator.SetTrigger(OnSkillHash);
+        transform.position = new Vector2(transform.position.x + inputDirection.x * 5, transform.position.y + inputDirection.y * 3);
     }
 }
