@@ -87,12 +87,14 @@ public class Player : MonoBehaviour
         inputActions.Player.Dash.canceled += OnDash;
         inputActions.Player.Attack.performed += OnAttack;
         inputActions.Player.Skill.performed += OnSkill;
+        inputActions.Player.Ultimate.performed += OnUltimate;
         //inputActions.Player.Attack.canceled += OnAttack;
     }
 
     private void OnDisable()
     {
         //inputActions.Player.Attack.canceled -= OnAttack;
+        inputActions.Player.Ultimate.performed -= OnUltimate;
         inputActions.Player.Skill.performed -= OnSkill;
         inputActions.Player.Attack.performed -= OnAttack;
         inputActions.Player.Dash.canceled -= OnDash;
@@ -321,6 +323,13 @@ public class Player : MonoBehaviour
     private void OnSkill(InputAction.CallbackContext context)
     {
         animator.SetTrigger(OnSkillHash);
+        Factory.Instance.GetSpownSkillEffect(this.transform.position, this.transform.rotation);
         transform.position = new Vector2(transform.position.x + inputDirection.x * 5, transform.position.y + inputDirection.y * 3);
+
+    }
+
+    private void OnUltimate(InputAction.CallbackContext context)
+    {
+        Factory.Instance.GetSpownUltimateEffect();
     }
 }
