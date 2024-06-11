@@ -190,6 +190,7 @@ public class Player : MonoBehaviour
         {
             if (rigid.velocity.y < 0.0)
             {
+                ResetGravity();
                 rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
                 animator.SetBool(IsJumpHash, true);
                 isGrounded = false;
@@ -243,6 +244,12 @@ public class Player : MonoBehaviour
         }
         ghost.makeGhost = false;
         moveSpeed = normalSpeed;
+    }
+
+    void ResetGravity()
+    {
+        // 중력 가속도를 초기화 (y 방향 속도를 0으로 설정)
+        rigid.velocity = new Vector2(rigid.velocity.x, 0);
     }
 
 
@@ -320,12 +327,62 @@ public class Player : MonoBehaviour
         }
     }
 
+    public float skillEffectRotate = 0;
+
     private void OnSkill(InputAction.CallbackContext context)
     {
         animator.SetTrigger(OnSkillHash);
-        Factory.Instance.GetSpownSkillEffect(this.transform.position, this.transform.rotation);
-        transform.position = new Vector2(transform.position.x + inputDirection.x * 5, transform.position.y + inputDirection.y * 3);
 
+        if (inputDirection.y > 0 && inputDirection.x == 0)
+        {
+            skillEffectRotate = 90;
+        }
+        else if (inputDirection.y < 0 && inputDirection.x == 0)
+        {
+            skillEffectRotate = -90;
+        }
+        else if (inputDirection.y > 0)
+        {
+            skillEffectRotate = 30;  
+        }
+        else if (inputDirection.y < 0)
+        {
+            skillEffectRotate = -30;
+        }
+        else
+        {
+            skillEffectRotate = 0;
+        }
+
+        if (transform.localScale.x < 0)
+        {
+            skillEffectRotate = -skillEffectRotate;
+        }
+
+        var skillEffect = Factory.Instance.GetSpownSkillEffect(this.transform.position, this.transform.rotation);
+        skillEffect.transform.rotation = Quaternion.Euler(0, 0, skillEffectRotate);
+        rigid.gravityScale = 0f;
+        ResetGravity(); 
+        if (inputDirection != Vector2.zero)
+        {
+            transform.position = new Vector2(transform.position.x + inputDirection.x * 5, transform.position.y + inputDirection.y * 3);
+        }
+        else
+        {
+            transform.position = new Vector2(transform.position.x + transform.localScale.x * 5, transform.position.y);
+        }
+        StartCoroutine(HandleSkill());
+    }
+
+    private IEnumerator HandleSkill()
+    {
+        yield return new WaitForSeconds(0.3f);
+        rigid.gravityScale = 2f;
+        canJumpAttack = true;
+        if (jumpCount > 1)
+        {
+            jumpCount = 1;
+        }
     }
 
     private void OnUltimate(InputAction.CallbackContext context)
