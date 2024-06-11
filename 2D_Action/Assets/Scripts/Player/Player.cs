@@ -359,24 +359,30 @@ public class Player : MonoBehaviour
             skillEffectRotate = -skillEffectRotate;
         }
 
+        previousInputDirection = inputDirection;
+        previousMoveSpeed = moveSpeed;
+
         var skillEffect = Factory.Instance.GetSpownSkillEffect(this.transform.position, this.transform.rotation);
         skillEffect.transform.rotation = Quaternion.Euler(0, 0, skillEffectRotate);
         rigid.gravityScale = 0f;
         ResetGravity(); 
         if (inputDirection != Vector2.zero)
         {
-            transform.position = new Vector2(transform.position.x + inputDirection.x * 5, transform.position.y + inputDirection.y * 3);
+            transform.position = new Vector2(transform.position.x + inputDirection.x * 7, transform.position.y + inputDirection.y * 4);
         }
         else
         {
-            transform.position = new Vector2(transform.position.x + transform.localScale.x * 5, transform.position.y);
+            transform.position = new Vector2(transform.position.x + transform.localScale.x * 7, transform.position.y);
         }
         StartCoroutine(HandleSkill());
     }
 
     private IEnumerator HandleSkill()
     {
+        moveSpeed = 0.0f;
         yield return new WaitForSeconds(0.3f);
+        inputDirection = previousInputDirection;
+        moveSpeed = previousMoveSpeed;
         rigid.gravityScale = 2f;
         canJumpAttack = true;
         if (jumpCount > 1)
