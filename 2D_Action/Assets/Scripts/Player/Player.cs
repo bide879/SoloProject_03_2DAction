@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,6 +7,7 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
+
     /// <summary>
     /// 이동속도
     /// </summary>
@@ -58,8 +60,8 @@ public class Player : MonoBehaviour
     readonly int OnAttackHash = Animator.StringToHash("OnAttack");
     readonly int IsAttackPushHash = Animator.StringToHash("IsAttackPush");
     readonly int OnDownAttackHash = Animator.StringToHash("OnDownAttack");
-
     readonly int OnSkillHash = Animator.StringToHash("OnSkill");
+    readonly int OnChargeEnergyHash = Animator.StringToHash("OnChargeEnergy");
 
     private void Awake()
     {
@@ -88,12 +90,10 @@ public class Player : MonoBehaviour
         inputActions.Player.Attack.performed += OnAttack;
         inputActions.Player.Skill.performed += OnSkill;
         inputActions.Player.Ultimate.performed += OnUltimate;
-        //inputActions.Player.Attack.canceled += OnAttack;
     }
 
     private void OnDisable()
     {
-        //inputActions.Player.Attack.canceled -= OnAttack;
         inputActions.Player.Ultimate.performed -= OnUltimate;
         inputActions.Player.Skill.performed -= OnSkill;
         inputActions.Player.Attack.performed -= OnAttack;
@@ -135,6 +135,8 @@ public class Player : MonoBehaviour
                     if (isAirDownAttack)
                     {
                         rigid.gravityScale = 2f;
+                        skillCost = maxSkillCost;
+                        SkillCostChang?.Invoke(skillCost);
                         isAirDownAttack = false;
                     }
                     isGrounded = true;
@@ -145,6 +147,9 @@ public class Player : MonoBehaviour
         }
     }
 
+    private int moveDownPressCount = 0;
+    private const int requiredPressCount = 2; // 연속으로 Down 키를 눌러야 하는 횟수
+
     private void OnMove(InputAction.CallbackContext context)
     {
         if (context.canceled)
@@ -152,21 +157,38 @@ public class Player : MonoBehaviour
             inputDirection = Vector2.zero;
         }
         inputDirection = context.ReadValue<Vector2>();
-        if (inputDirection.x != 0)
+
+        if (context.phase == InputActionPhase.Performed && context.ReadValue<Vector2>().y < 0)
         {
-            animator.SetBool(IsMoveHash, true);
-            if (inputDirection.x < 0)
+            moveDownPressCount++;
+
+            if (moveDownPressCount >= requiredPressCount && isGrounded)
             {
-                transform.localScale = new Vector3(-1f, 1f, 1f);
-            }
-            else
-            {
-                transform.localScale = new Vector3(1f, 1f, 1f);
+                OnChargeEnergy();
+                moveDownPressCount = 0; // 초기화
             }
         }
         else
         {
-            animator.SetBool(IsMoveHash, false);
+            if (inputDirection.x != 0)
+            {
+                animator.SetBool(IsMoveHash, true);
+                if (inputDirection.x < 0)
+                {
+                    transform.localScale = new Vector3(-1f, 1f, 1f);
+                }
+                else
+                {
+                    transform.localScale = new Vector3(1f, 1f, 1f);
+                }
+
+            }
+            else
+            {
+                animator.SetBool(IsMoveHash, false);
+            }
+
+            moveDownPressCount = 0;
         }
     }
 
@@ -179,6 +201,7 @@ public class Player : MonoBehaviour
     private void OnJump(InputAction.CallbackContext context)
     {
         Jump();
+        moveDownPressCount = 0;
     }
 
     bool canJumpAttack = true;
@@ -188,9 +211,10 @@ public class Player : MonoBehaviour
 
         if (!isGrounded && jumpCount < 2)
         {
-            if (rigid.velocity.y < 0.0)
+            if (rigid.velocity.y < 5 && !isAirDownAttack)
             {
                 ResetGravity();
+                rigid.AddForce(Vector2.zero);
                 rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
                 animator.SetBool(IsJumpHash, true);
                 isGrounded = false;
@@ -210,11 +234,15 @@ public class Player : MonoBehaviour
 
     private void OnDash(InputAction.CallbackContext context)
     {
-
+       
         if (!context.canceled)
         {
             if (isGrounded)
-            {           
+            {
+                if (inputDirection.x == 0)
+                {
+                    return;
+                }
                 Factory.Instance.GetSpownDashEffect(this.transform.position, this.transform.rotation);
                 StopAllCoroutines();
                 rigid.AddForce((Vector2.right * inputDirection.x) * 15.0f, ForceMode2D.Impulse);
@@ -262,6 +290,11 @@ public class Player : MonoBehaviour
     private float previousMoveSpeed;
     private bool isAirDownAttack = false;
 
+    public Action<int> SkillCostChang;
+    private int skillCost = 5;
+    private int maxSkillCost = 5;
+
+
     private void OnAttack(InputAction.CallbackContext context)
     {
         Debug.Log($"x : {inputDirection.x}, y : {inputDirection.y}");
@@ -283,7 +316,7 @@ public class Player : MonoBehaviour
             animator.SetTrigger(OnAttackHash);
             StartCoroutine(HandleAttack());
         }
-        if (inputDirection.y < 0 && !isGrounded)
+        if (inputDirection.y < 0 && !isGrounded && !isAirDownAttack)
         {
             AirDownAttack();
         }
@@ -331,6 +364,10 @@ public class Player : MonoBehaviour
 
     private void OnSkill(InputAction.CallbackContext context)
     {
+        if(skillCost < 1 || isAirDownAttack)
+        {
+            return;
+        }
         animator.SetTrigger(OnSkillHash);
 
         if (inputDirection.y > 0 && inputDirection.x == 0)
@@ -365,7 +402,11 @@ public class Player : MonoBehaviour
         var skillEffect = Factory.Instance.GetSpownSkillEffect(this.transform.position, this.transform.rotation);
         skillEffect.transform.rotation = Quaternion.Euler(0, 0, skillEffectRotate);
         rigid.gravityScale = 0f;
-        ResetGravity(); 
+        skillCost--;
+        SkillCostChang?.Invoke(skillCost);
+
+        ResetGravity();
+        Debug.Log(skillCost);
         if (inputDirection != Vector2.zero)
         {
             transform.position = new Vector2(transform.position.x + inputDirection.x * 7, transform.position.y + inputDirection.y * 4);
@@ -389,6 +430,25 @@ public class Player : MonoBehaviour
         {
             jumpCount = 1;
         }
+    }
+
+    private void OnChargeEnergy()
+    {
+        animator.SetTrigger(OnChargeEnergyHash);
+        StartCoroutine(HandleChargeEnergy());
+    }
+
+    private IEnumerator HandleChargeEnergy()
+    {
+        previousInputDirection = inputDirection;
+        skillCost = maxSkillCost;
+        previousMoveSpeed = moveSpeed;
+        moveSpeed = 0.0f;
+        SkillCostChang?.Invoke(skillCost);
+
+        yield return new WaitForSeconds(0.45f);
+        inputDirection = previousInputDirection;
+        moveSpeed = previousMoveSpeed;
     }
 
     private void OnUltimate(InputAction.CallbackContext context)
