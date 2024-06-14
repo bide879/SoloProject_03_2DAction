@@ -52,6 +52,16 @@ public class Player : MonoBehaviour
     public bool IsAttackPush => isAttackPush;
 
     /// <summary>
+    /// 플레이어가 맞았을 때 실행될 델리게이트
+    /// </summary>
+    public Action onHit;
+
+    /// <summary>
+    /// 플레이어가 죽었을 때 실행될 델리게이트
+    /// </summary>
+    public Action onDie;
+
+    /// <summary>
     /// 애니메이터용 해시값
     /// </summary>
     readonly int IsMoveHash = Animator.StringToHash("IsMove");
@@ -160,7 +170,11 @@ public class Player : MonoBehaviour
 
         if (context.phase == InputActionPhase.Performed && context.ReadValue<Vector2>().y < 0)
         {
-            moveDownPressCount++;
+            if (isGrounded)
+            {
+                moveDownPressCount++;
+            }
+          
 
             if (moveDownPressCount >= requiredPressCount && isGrounded)
             {
@@ -406,7 +420,7 @@ public class Player : MonoBehaviour
         SkillCostChang?.Invoke(skillCost);
 
         ResetGravity();
-        Debug.Log(skillCost);
+        Debug.Log(inputDirection);
         if (inputDirection != Vector2.zero)
         {
             transform.position = new Vector2(transform.position.x + inputDirection.x * 7, transform.position.y + inputDirection.y * 4);
@@ -453,6 +467,15 @@ public class Player : MonoBehaviour
 
     private void OnUltimate(InputAction.CallbackContext context)
     {
-        Factory.Instance.GetSpownUltimateEffect();
+        //Factory.Instance.GetSpownUltimateEffect();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Ground")
+        {
+            isGrounded = true;
+            animator.SetBool(IsJumpHash, false);
+        }
     }
 }

@@ -30,10 +30,7 @@ public class SkillCost : MonoBehaviour
     {
         if(slot > 4)
         {
-            for(int i = 0; i < skillCostImg.Length; i++)
-            {
-                skillCostImg[i].color = color;
-            }     
+            StartCoroutine(ImageColorChang());  
         }
         else
         {
@@ -44,17 +41,12 @@ public class SkillCost : MonoBehaviour
         }
     }
 
-    IEnumerator ImageColorChang(bool cost)
+    IEnumerator ImageColorChang()
     {
-        if (!cost)
+        for (int i = 0; i < skillCostImg.Length; i++)
         {
-            color.a += Time.deltaTime;
+            skillCostImg[i].color = color;
+            yield return new WaitForSeconds(0.02f);
         }
-        else
-        {
-
-        }
-
-        yield return null;
     }
 }

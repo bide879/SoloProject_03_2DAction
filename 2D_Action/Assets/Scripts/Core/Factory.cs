@@ -6,6 +6,7 @@ public class Factory : Singleton<Factory>
     DashEffectPool dashPool;
     SkillEffectPool skillPool;
     UltimateEffectPool ultimateEffectPool;
+    MarkPool markPool;
 
     protected override void OnInitialize()
     {
@@ -15,10 +16,14 @@ public class Factory : Singleton<Factory>
         dashPool = GetComponentInChildren<DashEffectPool>();
         skillPool = GetComponentInChildren<SkillEffectPool>();
         ultimateEffectPool = GetComponentInChildren<UltimateEffectPool>();
+        //markPool = GetComponentInChildren<MarkPool>();
+
         ghostPool?.Initialize();
         dashPool?.Initialize();
         skillPool?.Initialize();
         ultimateEffectPool?.Initialize();
+        //markPool?.Initialize();
+
     }
 
     public GhostChild GetSpownGhost(GameObject ghostPrefab, Vector3 position, Quaternion rotation)
