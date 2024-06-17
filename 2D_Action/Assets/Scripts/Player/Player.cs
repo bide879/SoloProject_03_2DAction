@@ -476,6 +476,7 @@ public class Player : MonoBehaviour
         //Factory.Instance.GetSpownUltimateEffect();
     }
 
+    /*
     /// <summary>
     /// 벽에 부딛혔을 때 실행할 함수
     /// </summary>
@@ -488,5 +489,5 @@ public class Player : MonoBehaviour
             animator.SetBool(IsJumpHash, false);
             moveSpeed = normalSpeed;
         }
-    }
+    }*/
 }
