@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class PlayerAttackRange : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(collision.tag == "Enemy")
+        {
+            Debug.Log("적에게 명중");
+        }
     }
 }

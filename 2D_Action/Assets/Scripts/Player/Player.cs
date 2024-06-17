@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
 
     private int jumpCount = 0;
 
+    //private float maxJumpPower = 10.0f;
+
     /// <summary>
     /// 보통 이동속도
     /// </summary>
@@ -147,11 +149,13 @@ public class Player : MonoBehaviour
                         rigid.gravityScale = 2f;
                         skillCost = maxSkillCost;
                         SkillCostChang?.Invoke(skillCost);
+                        //StartCoroutine(HandleChargeEnergy());
                         isAirDownAttack = false;
                     }
                     isGrounded = true;
                     canJumpAttack = true;
                     jumpCount = 0;
+                    //inputDirection = Vector2.zero;
                 }
             }
         }
@@ -174,7 +178,6 @@ public class Player : MonoBehaviour
             {
                 moveDownPressCount++;
             }
-          
 
             if (moveDownPressCount >= requiredPressCount && isGrounded)
             {
@@ -222,7 +225,6 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-
         if (!isGrounded && jumpCount < 2)
         {
             if (rigid.velocity.y < 5 && !isAirDownAttack)
@@ -248,12 +250,11 @@ public class Player : MonoBehaviour
 
     private void OnDash(InputAction.CallbackContext context)
     {
-       
         if (!context.canceled)
         {
             if (isGrounded)
             {
-                if (inputDirection.x == 0)
+                if (inputDirection.x == 0 || chargeEnergy || isAirDownAttack)
                 {
                     return;
                 }
@@ -378,7 +379,10 @@ public class Player : MonoBehaviour
 
     private void OnSkill(InputAction.CallbackContext context)
     {
-        if(skillCost < 1 || isAirDownAttack)
+        previousInputDirection = inputDirection;
+        previousMoveSpeed = moveSpeed;
+
+        if (skillCost < 1 || isAirDownAttack)
         {
             return;
         }
@@ -410,8 +414,6 @@ public class Player : MonoBehaviour
             skillEffectRotate = -skillEffectRotate;
         }
 
-        previousInputDirection = inputDirection;
-        previousMoveSpeed = moveSpeed;
 
         var skillEffect = Factory.Instance.GetSpownSkillEffect(this.transform.position, this.transform.rotation);
         skillEffect.transform.rotation = Quaternion.Euler(0, 0, skillEffectRotate);
@@ -420,10 +422,10 @@ public class Player : MonoBehaviour
         SkillCostChang?.Invoke(skillCost);
 
         ResetGravity();
-        Debug.Log(inputDirection);
         if (inputDirection != Vector2.zero)
         {
-            transform.position = new Vector2(transform.position.x + inputDirection.x * 7, transform.position.y + inputDirection.y * 4);
+            transform.position = new Vector2(transform.position.x + previousInputDirection.x * 7, transform.position.y + inputDirection.y * 4);
+            Debug.Log(inputDirection);
         }
         else
         {
@@ -446,14 +448,17 @@ public class Player : MonoBehaviour
         }
     }
 
+    bool chargeEnergy = false;
     private void OnChargeEnergy()
     {
+        
         animator.SetTrigger(OnChargeEnergyHash);
         StartCoroutine(HandleChargeEnergy());
     }
 
     private IEnumerator HandleChargeEnergy()
     {
+        chargeEnergy = true;
         previousInputDirection = inputDirection;
         skillCost = maxSkillCost;
         previousMoveSpeed = moveSpeed;
@@ -463,6 +468,7 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(0.45f);
         inputDirection = previousInputDirection;
         moveSpeed = previousMoveSpeed;
+        chargeEnergy = false;
     }
 
     private void OnUltimate(InputAction.CallbackContext context)
@@ -470,12 +476,17 @@ public class Player : MonoBehaviour
         //Factory.Instance.GetSpownUltimateEffect();
     }
 
+    /// <summary>
+    /// 벽에 부딛혔을 때 실행할 함수
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Ground")
         {
             isGrounded = true;
             animator.SetBool(IsJumpHash, false);
+            moveSpeed = normalSpeed;
         }
     }
 }
