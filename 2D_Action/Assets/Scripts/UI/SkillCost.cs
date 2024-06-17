@@ -1,23 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SkillCost : MonoBehaviour
 {
-    Image[] skillCostImg;
-    public Color color;
+    Animator[] costAnimators;
+
+    readonly int OnConsumptionHash = Animator.StringToHash("OnConsumption");
+    readonly int OnCostChargeHash = Animator.StringToHash("OnCostCharge");
+
+    private int lastCost = 4;
 
     private void Awake()
     {
-        skillCostImg = new Image[transform.childCount];
+        costAnimators = new Animator[transform.childCount];
 
         for (int i = 0; i < transform.childCount; i++)
         {
             Transform slot = transform.GetChild(i);
-            Transform costChild = slot.GetChild(1);
-            skillCostImg[i] = costChild.GetComponent<Image>();
+            costAnimators[i] = slot.GetComponent<Animator>();
         }
     }
 
@@ -30,22 +34,23 @@ public class SkillCost : MonoBehaviour
     {
         if(slot > 4)
         {
-            StartCoroutine(ImageColorChang());  
+            StartCoroutine(ImageColorChang());
         }
         else
         {
-            if (skillCostImg[slot] != null)
+            if (costAnimators[slot] != null)
             {
-                skillCostImg[slot].color = Color.clear;
+                costAnimators[slot].SetTrigger(OnConsumptionHash);
+                lastCost = slot;
             }
         }
     }
 
     IEnumerator ImageColorChang()
     {
-        for (int i = 0; i < skillCostImg.Length; i++)
+        for (int i = lastCost; i < costAnimators.Length; i++)
         {
-            skillCostImg[i].color = color;
+            costAnimators[i].SetTrigger(OnCostChargeHash);
             yield return new WaitForSeconds(0.02f);
         }
     }
