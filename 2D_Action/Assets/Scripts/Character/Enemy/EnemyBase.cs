@@ -23,7 +23,7 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
         set
         {
             hp = value;
-            enemyHPBar = (EnemyHPBar.localScale.x * hp) / 100.0f;
+            enemyHPBar = Mathf.Clamp(hp/100,0,1);
         }
     }
 
@@ -69,7 +69,7 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
     /// <summary>
     /// 방어력(변수는 인스펙터에서 수정하기 위해 public으로 만든 것임)
     /// </summary>
-    public float defencePower = 3.0f;
+    public float defencePower = 0.0f;
     public float DefencePower => defencePower;
 
     /// <summary>
@@ -83,7 +83,7 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
 
     private void Awake()
     {
-        EnemyHPBar = transform.GetChild(1);
+        EnemyHPBar = transform.GetChild(2);
         //EnemyHPBar = GetComponent<Transform>();
     }
 

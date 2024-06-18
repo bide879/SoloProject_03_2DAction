@@ -98,9 +98,9 @@ public class Player : MonoBehaviour, IBattler, IHealth
     public Action onDie { get; set; }
 
     // 플레이어의 공격력과 방어력
-    public float baseAttackPower = 5.0f;
+    public float baseAttackPower = 10.0f;
     public float baseDefencePower = 1.0f;
-    float attackPower = 5.0f;
+    float attackPower = 10.0f;
     public float AttackPower => attackPower;
     float defencePower = 1.0f;
     public float DefencePower => defencePower;

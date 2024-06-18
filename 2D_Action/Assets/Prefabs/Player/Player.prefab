@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAttackPush: 0
-  baseAttackPower: 5
+  baseAttackPower: 10
   baseDefencePower: 1
   skillEffectRotate: 0
 --- !u!50 &1103288943894112034
