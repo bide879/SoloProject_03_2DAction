@@ -5,9 +5,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IBattler, IHealth
 {
-
+    #region 변수 선언
     /// <summary>
     /// 이동속도
     /// </summary>
@@ -54,14 +54,61 @@ public class Player : MonoBehaviour
     public bool IsAttackPush => isAttackPush;
 
     /// <summary>
-    /// 플레이어가 맞았을 때 실행될 델리게이트
+    /// 플레이어의 현재 HP
     /// </summary>
-    public Action onHit;
+    float hp = 100.0f;
+    public float HP
+    {
+        get => hp;
+        set
+        {
+            if (IsAlive)     // 살아 있을 때만 MP 변화함
+            {
+                hp = value;
+                if (hp <= 0.0f)    // HP가 0 이하면 사망처리
+                {
+                    Die();
+                }
+                hp = Mathf.Clamp(hp, 0, MaxHP);     // 최소~최대 사이로 숫자 유지
+                onHealthChange?.Invoke(hp / MaxHP);   // 델리게이트로 HP변화 알림
+                //Debug.Log($"{this.gameObject.name} HP : {hp}");
+            }
+        }
+    }
 
     /// <summary>
-    /// 플레이어가 죽었을 때 실행될 델리게이트
+    /// 플레이어의 최대 HP
     /// </summary>
-    public Action onDie;
+    float maxHP = 100.0f;
+    public float MaxHP => maxHP;
+
+    /// <summary>
+    /// HP의 변경을 알리는 델리게이트
+    /// </summary>
+    public Action<float> onHealthChange { get; set; }
+
+    /// <summary>
+    /// 플레이어의 생존 여부를 확인하기 위한 프로퍼티
+    /// </summary>
+    public bool IsAlive => hp > 0;
+
+    /// <summary>
+    /// 플레이어의 사망을 알리는 델리게이트
+    /// </summary>
+    public Action onDie { get; set; }
+
+    // 플레이어의 공격력과 방어력
+    public float baseAttackPower = 5.0f;
+    public float baseDefencePower = 1.0f;
+    float attackPower = 5.0f;
+    public float AttackPower => attackPower;
+    float defencePower = 1.0f;
+    public float DefencePower => defencePower;
+
+    /// <summary>
+    /// 이 캐릭터가 맞았을 때 실행되는 델리게이트(int : 실제로 입은 데미지)
+    /// </summary>
+    public Action<int> onHit { get; set; }
 
     /// <summary>
     /// 애니메이터용 해시값
@@ -74,6 +121,9 @@ public class Player : MonoBehaviour
     readonly int OnDownAttackHash = Animator.StringToHash("OnDownAttack");
     readonly int OnSkillHash = Animator.StringToHash("OnSkill");
     readonly int OnChargeEnergyHash = Animator.StringToHash("OnChargeEnergy");
+    readonly int OnHitHash = Animator.StringToHash("OnHit");
+
+    #endregion
 
     private void Awake()
     {
@@ -90,6 +140,7 @@ public class Player : MonoBehaviour
         ghost.makeGhost = false;
     }
 
+    #region 플레이어 조작
 
     private void OnEnable()
     {
@@ -299,7 +350,6 @@ public class Player : MonoBehaviour
     // ---------------------------------------- 공격 -----------------------------------------
 
     private bool canAttack = true;
-    //private float attackDelay = 0.23f;
     private float attackDelay = 0.16f;
     private Vector2 previousInputDirection;
     private float previousMoveSpeed;
@@ -424,7 +474,7 @@ public class Player : MonoBehaviour
         ResetGravity();
         if (inputDirection != Vector2.zero)
         {
-            transform.position = new Vector2(transform.position.x + previousInputDirection.x * 7, transform.position.y + inputDirection.y * 4);
+            transform.position = new Vector2(transform.position.x + previousInputDirection.x * 7, transform.position.y + previousInputDirection.y * 4);
             Debug.Log(inputDirection);
         }
         else
@@ -476,9 +526,13 @@ public class Player : MonoBehaviour
         //Factory.Instance.GetSpownUltimateEffect();
     }
 
-    /*
+    #endregion
+
+    #region 플레이어 상호작용
+
+
     /// <summary>
-    /// 벽에 부딛혔을 때 실행할 함수
+    /// 부딛혔을 때 실행할 함수
     /// </summary>
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
@@ -489,5 +543,91 @@ public class Player : MonoBehaviour
             animator.SetBool(IsJumpHash, false);
             moveSpeed = normalSpeed;
         }
-    }*/
+    }
+
+    bool onHitDefence = false;
+    Coroutine defenceCoroutine;
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy" && !onHitDefence)
+        {
+            Defence(10);
+            ResetGravity();
+            rigid.AddForce(Vector2.zero);
+            rigid.AddForce(new Vector2(-inputDirection.x * 8, 3), ForceMode2D.Impulse);
+
+            // 기존 코루틴이 실행 중이라면 중지
+            if (defenceCoroutine != null)
+            {
+                StopCoroutine(defenceCoroutine);
+            }
+
+            defenceCoroutine = StartCoroutine(OnHitDefence());
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy")
+        {
+            onHitDefence = false;
+            if (defenceCoroutine != null)
+            {
+                StopCoroutine(defenceCoroutine);
+                defenceCoroutine = null;
+            }
+        }
+    }
+
+    private IEnumerator OnHitDefence()
+    {
+        onHitDefence = true;
+        yield return new WaitForSeconds(0.5f);
+        onHitDefence = false;
+        defenceCoroutine = null;
+    }
+
+
+    private void Die()
+    {
+        onDie?.Invoke();
+    }
+
+    public void Attack(IBattler target)
+    {
+        target.Defence(AttackPower);
+        Debug.Log($"{target}을 공격");
+    }
+
+    public void Defence(float damage)
+    {
+        if (IsAlive)
+        {
+            //Time.timeScale = 0.1f;
+
+            animator.SetTrigger(OnHitHash);
+
+            float final = Mathf.Max(0, damage - DefencePower);  // 0 이하로는 데미지가 내려가지 않는다.
+            HP -= final;
+
+            onHit?.Invoke(Mathf.RoundToInt(final));
+        }
+    }
+
+    void IHealth.Die()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void HealthRegenerate(float totalRegen, float duration)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void HealthRegenerateByTick(float tickRegen, float tickInterval, uint totalTickCount)
+    {
+        throw new NotImplementedException();
+    }
+    #endregion
 }

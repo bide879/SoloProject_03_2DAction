@@ -12,7 +12,7 @@ public class SkillCost : MonoBehaviour
     readonly int OnConsumptionHash = Animator.StringToHash("OnConsumption");
     readonly int OnCostChargeHash = Animator.StringToHash("OnCostCharge");
 
-    private int lastCost = 4;
+    private int lastCost = 5;
 
     private void Awake()
     {
@@ -35,13 +35,17 @@ public class SkillCost : MonoBehaviour
         if(slot > 4)
         {
             StartCoroutine(ImageColorChang());
+            lastCost = 5;
         }
         else
         {
             if (costAnimators[slot] != null)
             {
                 costAnimators[slot].SetTrigger(OnConsumptionHash);
-                lastCost = slot;
+                if(lastCost != 0)
+                {
+                    lastCost -= 1;
+                }
             }
         }
     }
