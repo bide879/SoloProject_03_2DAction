@@ -8,21 +8,14 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour, IBattler, IHealth
 {
     #region 변수 선언
+
+    // -------------- 이동 관련 변수 --------------
+
     /// <summary>
     /// 이동속도
     /// </summary>
     private float moveSpeed = 5.0f;
     public float MoveSpeed => moveSpeed;
-
-    /// <summary>
-    /// 점프 높이
-    /// </summary>
-    private float jumpPower = 10.0f;
-    public float JumpPower => jumpPower;
-
-    private int jumpCount = 0;
-
-    //private float maxJumpPower = 10.0f;
 
     /// <summary>
     /// 보통 이동속도
@@ -40,18 +33,55 @@ public class Player : MonoBehaviour, IBattler, IHealth
     /// </summary>
     private Vector2 inputDirection = Vector2.zero;
 
-    // 인풋액션
-    PlayerInputActions inputActions;
+    // -------------- 점프 관련 변수 --------------
 
-    Rigidbody2D rigid;
+    /// <summary>
+    /// 점프 높이
+    /// </summary>
+    private float jumpPower = 10.0f;
+    public float JumpPower => jumpPower;
 
+    /// <summary>
+    /// 점프 횟수(2단점프 확인 및 초기화 용)
+    /// </summary>
+    private int jumpCount = 0;
+
+    /// <summary>
+    /// 점프공격 가능 여부
+    /// </summary>
+    bool canJumpAttack = true;
+    float pushJumpTime = 0f;
+    private float maxJumpPower = 10.0f;
+    private float minJumpPower = 5.0f;
+    private bool jumpButtonPressed = false;
+
+
+    /// <summary>
+    /// 지상/공중 여부
+    /// </summary>
     private bool isGrounded = true;
 
+    // -------------- 전투 관련 변수 --------------
+
+    /// <summary>
+    /// 연속으로 Down 키를 눌러야 하는 횟수
+    /// </summary>
+    private const int requiredPressCount = 2;
+
+    /// <summary>
+    /// Down 키를 누른 횟수
+    /// </summary>
+    private int moveDownPressCount = 0;
+
+    // 인풋액션
+    PlayerInputActions inputActions;
+    Rigidbody2D rigid;
     Animator animator;
     Ghost ghost;
 
     public bool isAttackPush = false;
     public bool IsAttackPush => isAttackPush;
+
 
     /// <summary>
     /// 플레이어의 현재 HP
@@ -148,6 +178,7 @@ public class Player : MonoBehaviour, IBattler, IHealth
         inputActions.Player.Move.performed += OnMove;
         inputActions.Player.Move.canceled += OnStop;
         inputActions.Player.Jump.performed += OnJump;
+        inputActions.Player.Jump.canceled += OnJump;
         inputActions.Player.Dash.performed += OnDash;
         inputActions.Player.Dash.canceled += OnDash;
         inputActions.Player.Attack.performed += OnAttack;
@@ -162,13 +193,23 @@ public class Player : MonoBehaviour, IBattler, IHealth
         inputActions.Player.Attack.performed -= OnAttack;
         inputActions.Player.Dash.canceled -= OnDash;
         inputActions.Player.Dash.performed -= OnDash;
+        inputActions.Player.Jump.canceled -= OnJump;
         inputActions.Player.Jump.performed -= OnJump;
         inputActions.Player.Move.canceled -= OnStop;
         inputActions.Player.Move.performed -= OnMove;
         inputActions.Player.Disable();
     }
 
-    void FixedUpdate()
+    private void Update()
+    {
+        // 점프 버튼을 누르고 있는 시간 계산
+        if (jumpButtonPressed)
+        {
+            pushJumpTime += Time.deltaTime;
+        }
+    }
+
+    private void FixedUpdate()
     {
         float h = Input.GetAxisRaw("Horizontal");
         rigid.AddForce(Vector2.right * h, ForceMode2D.Impulse);
@@ -212,9 +253,10 @@ public class Player : MonoBehaviour, IBattler, IHealth
         }
     }
 
-    private int moveDownPressCount = 0;
-    private const int requiredPressCount = 2; // 연속으로 Down 키를 눌러야 하는 횟수
-
+    /// <summary>
+    /// 방향키를 눌렀을때 실행될 함수
+    /// </summary>
+    /// <param name="context"></param>
     private void OnMove(InputAction.CallbackContext context)
     {
         if (context.canceled)
@@ -260,22 +302,51 @@ public class Player : MonoBehaviour, IBattler, IHealth
         }
     }
 
+    /// <summary>
+    /// 동작을 멈췄을 때 실행할 함수
+    /// </summary>
+    /// <param name="_"></param>
     private void OnStop(InputAction.CallbackContext _)
     {
         inputDirection = Vector2.zero;
         animator.SetBool(IsMoveHash, false);
     }
 
+    /// <summary>
+    /// 점프 버튼을 눌렀을 때 실행할 함수
+    /// </summary>
+    /// <param name="context"></param>
     private void OnJump(InputAction.CallbackContext context)
     {
-        Jump();
-        moveDownPressCount = 0;
+        Debug.Log("점프");
+        float buttonValue = context.ReadValue<float>();
+
+        if (context.canceled)
+        {
+            if (rigid.velocity.y > 3.5f) // 상승 중일 때만
+            {
+                rigid.velocity = new Vector2(rigid.velocity.x, 0); // y 축 속도를 0으로 설정하여 상승 멈추기
+                rigid.AddForce(Vector2.zero);
+                rigid.AddForce(Vector2.up * minJumpPower, ForceMode2D.Impulse);
+            }
+        }
+        else if (context.performed)
+        {
+            jumpButtonPressed = true;
+            pushJumpTime = 0f; // 점프 버튼을 누르기 시작할 때 초기화
+            Jump(maxJumpPower);
+            moveDownPressCount = 0;
+            jumpButtonPressed = false;
+        }
     }
 
-    bool canJumpAttack = true;
-
-    private void Jump()
+    /// <summary>
+    /// 점프/2단점프 처리하는 함수
+    /// </summary>
+    /// <param name="jumpPower">점프 힘</param>
+    private void Jump(float jumpPower)
     {
+        Debug.Log("점프");
         if (!isGrounded && jumpCount < 2)
         {
             if (rigid.velocity.y < 5 && !isAirDownAttack)
@@ -297,8 +368,15 @@ public class Player : MonoBehaviour, IBattler, IHealth
             canJumpAttack = true;
             jumpCount++;
         }
+
+        // 점프가 끝나면 누르고 있는 시간 초기화
+        pushJumpTime = 0f;
     }
 
+    /// <summary>
+    /// 대시 버튼을 눌렀을 때 실행될 함수
+    /// </summary>
+    /// <param name="context"></param>
     private void OnDash(InputAction.CallbackContext context)
     {
         if (!context.canceled)
@@ -325,6 +403,10 @@ public class Player : MonoBehaviour, IBattler, IHealth
         }
     }
 
+    /// <summary>
+    /// 대시 종료시 처리를 위한 코루틴
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator GraduallyReduceSpeed()
     {
         float duration = 0.5f; // 속도를 줄이는 데 걸리는 시간
@@ -340,7 +422,10 @@ public class Player : MonoBehaviour, IBattler, IHealth
         moveSpeed = normalSpeed;
     }
 
-    void ResetGravity()
+    /// <summary>
+    /// 중력을 초기화하는 함수
+    /// </summary>
+    private void ResetGravity()
     {
         // 중력 가속도를 초기화 (y 방향 속도를 0으로 설정)
         rigid.velocity = new Vector2(rigid.velocity.x, 0);

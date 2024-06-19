@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class BarBase : MonoBehaviour
 {
-
     protected Slider slider;
 
     protected float maxValue;
@@ -16,9 +15,10 @@ public class BarBase : MonoBehaviour
         slider = GetComponent<Slider>();
     }
 
-    protected void OnValueChange(float ratio)
+    protected virtual void OnValueChange(float ratio)
     {
         ratio = Mathf.Clamp01(ratio);
         slider.value = ratio;
     }
+
 }

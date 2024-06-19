@@ -23,6 +23,10 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
         set
         {
             hp = value;
+            if (hp <= 0.0f)    // HP가 0 이하면 사망처리
+            {
+                Die();
+            }
             enemyHPBar = Mathf.Clamp(hp/100,0,1);
         }
     }
@@ -148,6 +152,7 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
     {
         onDie?.Invoke();                // 죽었다고 알림 보내기
         onDie = null;                   // 죽으면 onDie도 초기화
+        gameObject.SetActive(false);
     }
 
     public void HealthRegenerate(float totalRegen, float duration)

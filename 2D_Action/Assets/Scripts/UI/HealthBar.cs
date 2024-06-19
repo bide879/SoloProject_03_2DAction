@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HealthBar : BarBase
 {
+
     private void Start()
     {
         Player player = GameManager.Instance.Player;
