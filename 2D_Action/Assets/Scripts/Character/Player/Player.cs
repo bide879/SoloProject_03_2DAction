@@ -140,12 +140,9 @@ public class Player : MonoBehaviour, IBattler, IHealth
     /// </summary>
     public Action<int> onHit { get; set; }
 
-    /// <summary>
-    /// 애니메이터용 해시값
-    /// </summary>
+    // 애니메이터용 해시값
     readonly int IsMoveHash = Animator.StringToHash("IsMove");
     readonly int IsJumpHash = Animator.StringToHash("IsJump");
-
     readonly int OnAttackHash = Animator.StringToHash("OnAttack");
     readonly int IsAttackPushHash = Animator.StringToHash("IsAttackPush");
     readonly int OnDownAttackHash = Animator.StringToHash("OnDownAttack");
@@ -160,13 +157,12 @@ public class Player : MonoBehaviour, IBattler, IHealth
         inputActions = new PlayerInputActions(); // 인풋 액션 생성
         rigid = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
-
-        normalSpeed = moveSpeed;
         ghost = GetComponentInChildren<Ghost>();
     }
 
     private void Start()
     {
+        normalSpeed = moveSpeed;
         ghost.makeGhost = false;
     }
 

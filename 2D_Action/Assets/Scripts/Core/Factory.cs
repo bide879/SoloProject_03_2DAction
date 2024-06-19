@@ -16,13 +16,13 @@ public class Factory : Singleton<Factory>
         dashPool = GetComponentInChildren<DashEffectPool>();
         skillPool = GetComponentInChildren<SkillEffectPool>();
         ultimateEffectPool = GetComponentInChildren<UltimateEffectPool>();
-        //markPool = GetComponentInChildren<MarkPool>();
+        markPool = GetComponentInChildren<MarkPool>();
 
         ghostPool?.Initialize();
         dashPool?.Initialize();
         skillPool?.Initialize();
         ultimateEffectPool?.Initialize();
-        //markPool?.Initialize();
+        markPool?.Initialize();
 
     }
 
@@ -55,5 +55,13 @@ public class Factory : Singleton<Factory>
         UltimateEffect Ultimate = ultimateEffectPool?.GetObject();
         Ultimate.transform.position = new Vector3 (0,0,-1);
         return Ultimate;
+    }
+
+    public Mark GetSpownMark(GameObject target)
+    {
+        Mark mark = markPool?.GetObject();
+        mark.target = target;
+        mark.transform.position = target.transform.position;
+        return mark;
     }
 }

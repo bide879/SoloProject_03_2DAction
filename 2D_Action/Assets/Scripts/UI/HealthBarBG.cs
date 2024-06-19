@@ -20,7 +20,7 @@ public class HealthBarBG : BarBase
 
     private IEnumerator SmoothChange(float startValue, float endValue, float duration)
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.5f);
         float elapsed = 0f;
         while (elapsed < duration)
         {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowBackGround : MonoBehaviour
 {
-    private float cameraSpeed = 2.0f;
+    private float cameraSpeed = 4.0f;
 
     private Player player;
     private GameObject playerObj;

@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class PlayerAttackRange : MonoBehaviour
 {
+    private EnemyBase enemy;
+    private Mark mark;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Enemy")
+        if (other.tag == "Enemy")
         {
+            Debug.Log("공격 마크 명중");
             IBattler target = other.GetComponent<IBattler>();
             if (target != null)
             {
+                enemy = other.GetComponent<EnemyBase>();
                 GameManager.Instance.Player.Attack(target);
-                Debug.Log("적에게 명중");
+                if(enemy.markCount == 0)
+                {
+                    Factory.Instance.GetSpownMark(enemy.gameObject);
+                }
+            }
+        }
+        else if (other.tag == "Mark")
+        {
+            mark = other.GetComponentInChildren<Mark>();
+            enemy.markCount += 1;
+            if (mark != null && enemy.markCount > 1)
+            {
+                mark.HitMark();
             }
         }
     }

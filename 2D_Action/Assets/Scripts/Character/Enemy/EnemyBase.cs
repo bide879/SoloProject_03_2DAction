@@ -85,6 +85,11 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
 
     private float enemyHPBar;
 
+    /// <summary>
+    /// 적이 가지고있는 마크 갯수
+    /// </summary>
+    public int markCount = Mathf.Clamp(0,0,3);
+
     private void Awake()
     {
         EnemyHPBar = transform.GetChild(2);
