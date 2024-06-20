@@ -9,8 +9,9 @@ public class Mark : RecycleObject
     private Animator animator;
     private EnemyBase enemy;
     readonly int OnMarkLvUpHash = Animator.StringToHash("OnMarkLvUp");
+    readonly int OnTargetDieUpHash = Animator.StringToHash("OnTargetDie");
     private float lifeTime;
-    private float minLifeTime = 20.0f;
+    private float minLifeTime = 5.0f;
 
     private Coroutine lifeOverCoroutine; // 현재 진행 중인 LifeOver 코루틴을 저장하는 변수
 
@@ -29,7 +30,6 @@ public class Mark : RecycleObject
         }
 
         animator = GetComponent<Animator>();
-
         lifeTime = minLifeTime;
         StartLifeOverCoroutine(lifeTime); // LifeOver 코루틴 시작
     }
@@ -38,13 +38,22 @@ public class Mark : RecycleObject
     {
         if(target != null)
         {
-            enemy = target.GetComponent<EnemyBase>();
+            //enemy = target.GetComponent<EnemyBase>();
             enemy.markCount = 0;
             lifeTime = minLifeTime;
             target = null;
         }
        
         base.OnDisable();
+    }
+
+    private void Start()
+    {
+        if (target != null)
+        {
+            enemy = target.GetComponent<EnemyBase>();
+            enemy.onDie += OnTargetDie;
+        }
     }
 
     private void FixedUpdate()
@@ -61,10 +70,6 @@ public class Mark : RecycleObject
         if(target != null)
         {
             transform.position = target.transform.position;
-            if(enemy != null)
-            {
-
-            }
         }
     }
 
@@ -77,7 +82,7 @@ public class Mark : RecycleObject
         {
             StopCoroutine(lifeOverCoroutine);
         }
-        lifeOverCoroutine = StartCoroutine(LifeOver(lifeTime));
+        lifeOverCoroutine = StartCoroutine(MarkLifeOver(lifeTime));
     }
 
     private void StartLifeOverCoroutine(float delay)
@@ -86,6 +91,36 @@ public class Mark : RecycleObject
         {
             StopCoroutine(lifeOverCoroutine);
         }
-        lifeOverCoroutine = StartCoroutine(LifeOver(delay));
+        lifeOverCoroutine = StartCoroutine(MarkLifeOver(delay));
     }
+
+    private void OnTargetDie()
+    {
+        if(target != null)
+        {
+            StopAllCoroutines();
+            StartCoroutine(MarkDie());
+        }
+    }
+
+    /// <summary>
+    /// 일정 시간 후에 이 게임 오브젝트를 비활성화 시키는 코루틴
+    /// </summary>
+    /// <param name="delay">비활성화 될 때까지 걸리는 시간</param>
+    /// <returns></returns>
+    protected IEnumerator MarkLifeOver(float delay = 0.0f)
+    {
+        yield return new WaitForSeconds(delay);// delay만큼 기다리고
+        animator.SetTrigger(OnTargetDieUpHash);
+        yield return new WaitForSeconds(0.2f);
+        gameObject.SetActive(false);// 비활성화 
+    }
+
+    private IEnumerator MarkDie()
+    {
+        animator.SetTrigger(OnTargetDieUpHash);
+        yield return new WaitForSeconds(0.2f);
+        gameObject.SetActive(false);
+    }
+   
 }
