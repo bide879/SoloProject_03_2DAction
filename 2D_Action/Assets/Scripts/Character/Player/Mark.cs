@@ -94,7 +94,7 @@ public class Mark : RecycleObject
         lifeOverCoroutine = StartCoroutine(MarkLifeOver(delay));
     }
 
-    private void OnTargetDie()
+    public void OnTargetDie()
     {
         if(target != null)
         {

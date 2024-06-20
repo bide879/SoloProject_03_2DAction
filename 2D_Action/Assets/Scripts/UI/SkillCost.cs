@@ -27,14 +27,19 @@ public class SkillCost : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.Player.SkillCostChang += OnChangCostImage;
+        GameManager.Instance.Player.SkillCostChang += OnChangCost;
     }
 
-    private void OnChangCostImage(int slot)
+    private void OnChangCost(int slot)
     {
-        if(slot > 4)
+        if (slot != 5 && slot >= lastCost)
         {
-            StartCoroutine(ImageColorChang());
+            StartCoroutine(ChangCost(slot));
+            lastCost = slot;
+        }
+        else if(slot > 4)
+        {
+            StartCoroutine(ChangAllCost());
             lastCost = 5;
         }
         else
@@ -50,9 +55,22 @@ public class SkillCost : MonoBehaviour
         }
     }
 
-    IEnumerator ImageColorChang()
+    IEnumerator ChangAllCost()
     {
         for (int i = lastCost; i < costAnimators.Length; i++)
+        {
+            costAnimators[i].SetTrigger(OnCostChargeHash);
+            yield return new WaitForSeconds(0.02f);
+        }
+    }
+
+    IEnumerator ChangCost(int slot)
+    {
+        if(slot > 4)
+        {
+            slot = 5;
+        }
+        for (int i = lastCost; i < slot; i++)
         {
             costAnimators[i].SetTrigger(OnCostChargeHash);
             yield return new WaitForSeconds(0.02f);

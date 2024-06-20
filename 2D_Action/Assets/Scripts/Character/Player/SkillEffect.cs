@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class SkillEffect : RecycleObject
 {
+    private EnemyBase enemy;
+    private Mark mark;
+
     protected override void OnEnable()
     {
         base.OnEnable();
@@ -25,6 +28,31 @@ public class SkillEffect : RecycleObject
     {
         base.OnDisable();
         transform.localScale = new Vector3(2, 2, 1);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Enemy")
+        {
+            IBattler target = other.GetComponent<IBattler>();
+            if (target != null)
+            {
+                enemy = other.GetComponent<EnemyBase>();
+                GameManager.Instance.Player.SkillAttack(target, enemy.markCount);
+                if (enemy.markCount > 0)
+                {
+                    enemy.markCount = 0;
+                }
+            }
+        }
+        else if (other.tag == "Mark")
+        {
+            mark = other.GetComponentInChildren<Mark>();
+            if (mark != null)
+            {
+                mark.OnTargetDie();
+            }
+        }
     }
 
 }

@@ -11,7 +11,6 @@ public class PlayerAttackRange : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            Debug.Log("공격 마크 명중");
             IBattler target = other.GetComponent<IBattler>();
             if (target != null)
             {

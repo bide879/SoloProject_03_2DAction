@@ -50,7 +50,7 @@ public class Player : MonoBehaviour, IBattler, IHealth
     /// 점프공격 가능 여부
     /// </summary>
     bool canJumpAttack = true;
-    float pushJumpTime = 0f;
+    private float pushJumpTime = 0f;
     private float maxJumpPower = 10.0f;
     private float minJumpPower = 5.0f;
     private bool jumpButtonPressed = false;
@@ -81,6 +81,28 @@ public class Player : MonoBehaviour, IBattler, IHealth
 
     public bool isAttackPush = false;
     public bool IsAttackPush => isAttackPush;
+
+
+    private bool canAttack = true;
+    private float attackDelay = 0.16f;
+    private Vector2 previousInputDirection;
+    private float previousMoveSpeed;
+    private bool isAirDownAttack = false;
+
+    public Action<int> SkillCostChang;
+    private int skillCost = 5;
+
+
+    private int SkillCost
+    {
+        get => skillCost;
+        set
+        {
+            skillCost = Mathf.Clamp(value, 0, maxSkillCost); ;
+        }
+    }
+    private int maxSkillCost = 5;
+
 
 
     /// <summary>
@@ -235,8 +257,8 @@ public class Player : MonoBehaviour, IBattler, IHealth
                     if (isAirDownAttack)
                     {
                         rigid.gravityScale = 2f;
-                        skillCost = maxSkillCost;
-                        SkillCostChang?.Invoke(skillCost);
+                        SkillCost = maxSkillCost;
+                        SkillCostChang?.Invoke(SkillCost);
                         //StartCoroutine(HandleChargeEnergy());
                         isAirDownAttack = false;
                     }
@@ -314,9 +336,6 @@ public class Player : MonoBehaviour, IBattler, IHealth
     /// <param name="context"></param>
     private void OnJump(InputAction.CallbackContext context)
     {
-        Debug.Log("점프");
-        float buttonValue = context.ReadValue<float>();
-
         if (context.canceled)
         {
             if (rigid.velocity.y > 3.5f) // 상승 중일 때만
@@ -342,7 +361,6 @@ public class Player : MonoBehaviour, IBattler, IHealth
     /// <param name="jumpPower">점프 힘</param>
     private void Jump(float jumpPower)
     {
-        Debug.Log("점프");
         if (!isGrounded && jumpCount < 2)
         {
             if (rigid.velocity.y < 5 && !isAirDownAttack)
@@ -430,20 +448,8 @@ public class Player : MonoBehaviour, IBattler, IHealth
 
     // ---------------------------------------- 공격 -----------------------------------------
 
-    private bool canAttack = true;
-    private float attackDelay = 0.16f;
-    private Vector2 previousInputDirection;
-    private float previousMoveSpeed;
-    private bool isAirDownAttack = false;
-
-    public Action<int> SkillCostChang;
-    private int skillCost = 5;
-    private int maxSkillCost = 5;
-
-
     private void OnAttack(InputAction.CallbackContext context)
     {
-        Debug.Log($"x : {inputDirection.x}, y : {inputDirection.y}");
         if (canAttack && canJumpAttack)
         {
             if (isGrounded)
@@ -513,7 +519,7 @@ public class Player : MonoBehaviour, IBattler, IHealth
         previousInputDirection = inputDirection;
         previousMoveSpeed = moveSpeed;
 
-        if (skillCost < 1 || isAirDownAttack)
+        if (SkillCost < 1 || isAirDownAttack)
         {
             return;
         }
@@ -529,7 +535,7 @@ public class Player : MonoBehaviour, IBattler, IHealth
         }
         else if (inputDirection.y > 0)
         {
-            skillEffectRotate = 30;  
+            skillEffectRotate = 30;
         }
         else if (inputDirection.y < 0)
         {
@@ -549,14 +555,18 @@ public class Player : MonoBehaviour, IBattler, IHealth
         var skillEffect = Factory.Instance.GetSpownSkillEffect(this.transform.position, this.transform.rotation);
         skillEffect.transform.rotation = Quaternion.Euler(0, 0, skillEffectRotate);
         rigid.gravityScale = 0f;
-        skillCost--;
-        SkillCostChang?.Invoke(skillCost);
+        SkillCost--;
+        SkillCostChang?.Invoke(SkillCost);
 
         ResetGravity();
-        if (inputDirection != Vector2.zero)
+
+        if (inputDirection.x == 0)
         {
-            transform.position = new Vector2(transform.position.x + previousInputDirection.x * 7, transform.position.y + previousInputDirection.y * 4);
-            Debug.Log(inputDirection);
+            transform.position = new Vector2(transform.position.x, transform.position.y + previousInputDirection.y * 7);
+        }
+        else if (inputDirection != Vector2.zero)
+        {
+            transform.position = new Vector2(transform.position.x + transform.localScale.x * 7, transform.position.y + previousInputDirection.y * 5);
         }
         else
         {
@@ -582,7 +592,7 @@ public class Player : MonoBehaviour, IBattler, IHealth
     bool chargeEnergy = false;
     private void OnChargeEnergy()
     {
-        
+
         animator.SetTrigger(OnChargeEnergyHash);
         StartCoroutine(HandleChargeEnergy());
     }
@@ -591,10 +601,10 @@ public class Player : MonoBehaviour, IBattler, IHealth
     {
         chargeEnergy = true;
         previousInputDirection = inputDirection;
-        skillCost = maxSkillCost;
+        SkillCost = maxSkillCost;
         previousMoveSpeed = moveSpeed;
         moveSpeed = 0.0f;
-        SkillCostChang?.Invoke(skillCost);
+        SkillCostChang?.Invoke(SkillCost);
 
         yield return new WaitForSeconds(0.45f);
         inputDirection = previousInputDirection;
@@ -678,7 +688,16 @@ public class Player : MonoBehaviour, IBattler, IHealth
     public void Attack(IBattler target)
     {
         target.Defence(AttackPower);
-        Debug.Log($"{target}을 공격");
+    }
+
+    public void SkillAttack(IBattler target, int count)
+    {
+        if(count > 0)
+        {
+            skillCost = skillCost + count;
+            SkillCostChang?.Invoke(skillCost);
+        }
+        target.Defence((AttackPower * 3) * (count + 1) );
     }
 
     public void Defence(float damage)

@@ -82,6 +82,7 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
     protected IBattler attackTarget = null;
 
     private Transform EnemyHPBar;
+    private Transform EnemyHPBarBG;
 
     private float enemyHPBar;
 
@@ -90,10 +91,25 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
     /// </summary>
     public int markCount = Mathf.Clamp(0,0,3);
 
+    private Animator animator;
+
+    readonly int IsMoveHash = Animator.StringToHash("IsMove");
+    readonly int OnJumpHash = Animator.StringToHash("OnJump");
+    readonly int OnAttackHash = Animator.StringToHash("OnAttack");
+    readonly int OnHitHash = Animator.StringToHash("OnHit");
+    readonly int OnDieHash = Animator.StringToHash("OnDie");
+
     private void Awake()
     {
+        EnemyHPBarBG = transform.GetChild(1);
         EnemyHPBar = transform.GetChild(2);
-        //EnemyHPBar = GetComponent<Transform>();
+        animator = GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
+        EnemyHPBarBG.gameObject.SetActive(false);
+        EnemyHPBar.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -136,11 +152,16 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
     /// <param name="damage">내가 받은 순수 데미지</param>
     public void Defence(float damage)
     {
+        if (EnemyHPBar.gameObject)
+        {
+            EnemyHPBarBG.gameObject.SetActive(true);
+            EnemyHPBar.gameObject.SetActive(true);
+        }
         if (IsAlive)
         {
             //Time.timeScale = 0.1f;
 
-            //animator.SetTrigger(OnHitHash);
+            animator.SetTrigger(OnHitHash);
 
             float final = Mathf.Max(0, damage - DefencePower);  // 0 이하로는 데미지가 내려가지 않는다.
             HP -= final;
@@ -155,10 +176,23 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
     /// </summary>
     public void Die()
     {
+        if (EnemyHPBar.gameObject)
+        {
+            EnemyHPBarBG.gameObject.SetActive(false);
+            EnemyHPBar.gameObject.SetActive(false);
+        }
         onDie?.Invoke();                // 죽었다고 알림 보내기
         onDie = null;                   // 죽으면 onDie도 초기화
+        StartCoroutine(OnDieAnimation());
+    }
+
+    private IEnumerator OnDieAnimation()
+    {
+        animator.SetTrigger(OnDieHash);
+        yield return new WaitForSeconds(1.0f);
         gameObject.SetActive(false);
     }
+
 
     public void HealthRegenerate(float totalRegen, float duration)
     {
