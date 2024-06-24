@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Factory : Singleton<Factory>
@@ -7,6 +8,8 @@ public class Factory : Singleton<Factory>
     SkillEffectPool skillPool;
     UltimateEffectPool ultimateEffectPool;
     MarkPool markPool;
+    Enemy_01_BulletPool enemy01_bulletPool;
+    Enemy_01_BulletHitPool enemy01_bulletHitPool;
 
     protected override void OnInitialize()
     {
@@ -17,13 +20,16 @@ public class Factory : Singleton<Factory>
         skillPool = GetComponentInChildren<SkillEffectPool>();
         ultimateEffectPool = GetComponentInChildren<UltimateEffectPool>();
         markPool = GetComponentInChildren<MarkPool>();
+        enemy01_bulletPool = GetComponentInChildren<Enemy_01_BulletPool>();
+        enemy01_bulletHitPool = GetComponentInChildren<Enemy_01_BulletHitPool>();
 
         ghostPool?.Initialize();
         dashPool?.Initialize();
         skillPool?.Initialize();
         ultimateEffectPool?.Initialize();
         markPool?.Initialize();
-
+        enemy01_bulletPool?.Initialize();
+        enemy01_bulletHitPool?.Initialize();
     }
 
     public GhostChild GetSpownGhost(GameObject ghostPrefab, Vector3 position, Quaternion rotation)
@@ -63,5 +69,20 @@ public class Factory : Singleton<Factory>
         mark.target = target;
         mark.transform.position = target.transform.position;
         return mark;
+    }
+
+    public Enemy_01_Bullet GetSpownEnemy01_Bullet(Vector3 position, Quaternion rotation)
+    {
+        Enemy_01_Bullet bullet = enemy01_bulletPool?.GetObject();
+        bullet.transform.rotation = rotation;
+        bullet.transform.position = position;
+        return bullet;
+    }
+
+    public Enemy_01_BulletHit GetSpownEnemy01_BulletHit(Vector3 position)
+    {
+        Enemy_01_BulletHit bulletHit = enemy01_bulletHitPool?.GetObject();
+        bulletHit.transform.position = position;
+        return bulletHit;
     }
 }

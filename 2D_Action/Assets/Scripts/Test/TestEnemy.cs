@@ -14,4 +14,9 @@ public class TestEnemy : TestBase
     {
         GameManager.Instance.Player.HP += 10;
     }
+
+    protected override void OnTest3(InputAction.CallbackContext context)
+    {
+        Factory.Instance.GetSpownEnemy01_Bullet(transform.position, transform.rotation);
+    }
 }
