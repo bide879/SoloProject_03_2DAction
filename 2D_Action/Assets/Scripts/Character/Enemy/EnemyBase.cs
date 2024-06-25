@@ -34,8 +34,29 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
     public enum BehaviorState : byte
     {
         Idle = 0,   // 대기상태
+        Turn,       // 방향전환상태
         Attack,     // 공격상태
         Dead        // 사망상태
+    }
+
+    /// <summary>
+    /// 적의 현재 상태
+    /// </summary>
+    BehaviorState state = BehaviorState.Idle;
+
+    /// <summary>
+    /// 적의 상태 확인 및 설정용 프로퍼티
+    /// </summary>
+    BehaviorState State
+    {
+        get => state;
+        set
+        {
+            if (state != value)          // 상태가 달라지면
+            {
+                state = value;
+            }
+        }
     }
 
     /// <summary>
@@ -83,6 +104,7 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
 
     private Transform EnemyHPBar;
     private Transform EnemyHPBarBG;
+    private Transform BulletSpowner;
 
     private float enemyHPBar;
 
@@ -93,8 +115,12 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
 
     private Animator animator;
 
-    readonly int IsMoveHash = Animator.StringToHash("IsMove");
-    readonly int OnJumpHash = Animator.StringToHash("OnJump");
+    private Rigidbody2D rigid;
+
+    private float forward = 1;
+
+    //readonly int IsMoveHash = Animator.StringToHash("IsMove");
+    readonly int OnTurnHash = Animator.StringToHash("OnTurn");
     readonly int OnAttackHash = Animator.StringToHash("OnAttack");
     readonly int OnHitHash = Animator.StringToHash("OnHit");
     readonly int OnDieHash = Animator.StringToHash("OnDie");
@@ -103,7 +129,10 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
     {
         EnemyHPBarBG = transform.GetChild(1);
         EnemyHPBar = transform.GetChild(2);
+        BulletSpowner = transform.GetChild(3);
+
         animator = GetComponent<Animator>();
+        rigid = GetComponent<Rigidbody2D>();
     }
 
     private void Start()
@@ -111,30 +140,76 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
         EnemyHPBarBG.gameObject.SetActive(false);
         EnemyHPBar.gameObject.SetActive(false);
     }
-
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
+        Debug.DrawRay(rigid.position + Vector2.down * 0.5f, Vector3.right * -3.0f * forward, new Color(0, 1, 0));
+        RaycastHit2D rayBackHit = Physics2D.Raycast(rigid.position + Vector2.down * 0.5f, Vector3.right * forward, -3, LayerMask.GetMask("Player"));
 
-    }
+        Debug.DrawRay(rigid.position + Vector2.down * 0.5f, Vector3.right * 8.0f * forward, new Color(1, 0, 0));
+        RaycastHit2D rayAttackHit = Physics2D.Raycast(rigid.position + Vector2.down * 0.5f * forward, Vector3.right, 8, LayerMask.GetMask("Player"));
 
-    private void OnTriggerExit(Collider other)
-    {
-
+        if (rayBackHit.collider != null)
+        {
+            Update_Turn();
+        }
+        else if (rayAttackHit.collider != null)
+        {
+            Update_Attack();
+        }
+        else 
+        {
+            Update_Idle();
+        }
     }
 
     void Update_Idle()
     {
-
+        State = BehaviorState.Idle;
     }
 
     void Update_Attack()
     {
+        if(State != BehaviorState.Turn)
+        {
+            StartCoroutine(OnUpdateCoolTime(0.5f));
+            State = BehaviorState.Attack;
+            animator.SetTrigger(OnAttackHash);
+        }
+    }
 
+    public void OnFire()
+    {
+        Factory.Instance.GetSpownEnemy01_Bullet(BulletSpowner.position, transform.rotation);
+    }
+
+    void Update_Turn()
+    {
+        if(State != BehaviorState.Turn)
+        {
+            StartCoroutine(OnTurnCoolTime());
+        }
     }
 
     void Update_Dead()
     {
 
+    }
+
+    private IEnumerator OnUpdateCoolTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+    }
+
+    private IEnumerator OnTurnCoolTime()
+    {
+        State = BehaviorState.Turn;
+        //yield return new WaitForSeconds(1f);
+        forward = -forward;
+        animator.SetTrigger(OnTurnHash);
+        yield return new WaitForSeconds(0.45f);
+        transform.localScale = new Vector3(forward, 1, 1);
+        yield return new WaitForSeconds(2f);
+        State = BehaviorState.Idle;
     }
 
     /// <summary>
@@ -184,6 +259,7 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
         onDie?.Invoke();                // 죽었다고 알림 보내기
         onDie = null;                   // 죽으면 onDie도 초기화
         StartCoroutine(OnDieAnimation());
+        State = BehaviorState.Dead;
     }
 
     private IEnumerator OnDieAnimation()
