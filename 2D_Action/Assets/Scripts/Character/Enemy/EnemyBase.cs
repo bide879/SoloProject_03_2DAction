@@ -142,11 +142,11 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
     }
     private void Update()
     {
-        Debug.DrawRay(rigid.position + Vector2.down * 0.5f, Vector3.right * -3.0f * forward, new Color(0, 1, 0));
-        RaycastHit2D rayBackHit = Physics2D.Raycast(rigid.position + Vector2.down * 0.5f, Vector3.right * forward, -3, LayerMask.GetMask("Player"));
+        Debug.DrawRay(rigid.position + Vector2.down * 0.5f, Vector3.right * -5.0f * forward, new Color(0, 1, 0));
+        RaycastHit2D rayBackHit = Physics2D.Raycast(rigid.position + Vector2.down * 0.5f, Vector3.right * forward, -5.0f, LayerMask.GetMask("Player"));
 
-        Debug.DrawRay(rigid.position + Vector2.down * 0.5f, Vector3.right * 8.0f * forward, new Color(1, 0, 0));
-        RaycastHit2D rayAttackHit = Physics2D.Raycast(rigid.position + Vector2.down * 0.5f * forward, Vector3.right, 8, LayerMask.GetMask("Player"));
+        Debug.DrawRay(rigid.position + Vector2.down * 0.5f, Vector3.right * 7.0f * forward, new Color(1, 0, 0));
+        RaycastHit2D rayAttackHit = Physics2D.Raycast(rigid.position + Vector2.down * 0.5f, Vector3.right * forward, 7.0f, LayerMask.GetMask("Player"));
 
         if (rayBackHit.collider != null)
         {
@@ -179,7 +179,7 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
 
     public void OnFire()
     {
-        Factory.Instance.GetSpownEnemy01_Bullet(BulletSpowner.position, transform.rotation);
+        Factory.Instance.GetSpownEnemy01_Bullet(BulletSpowner.position, forward);
     }
 
     void Update_Turn()
@@ -206,9 +206,9 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
         //yield return new WaitForSeconds(1f);
         forward = -forward;
         animator.SetTrigger(OnTurnHash);
-        yield return new WaitForSeconds(0.45f);
+        yield return new WaitForSeconds(0.35f);
         transform.localScale = new Vector3(forward, 1, 1);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         State = BehaviorState.Idle;
     }
 

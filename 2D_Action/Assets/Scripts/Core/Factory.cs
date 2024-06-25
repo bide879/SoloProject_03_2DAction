@@ -71,11 +71,12 @@ public class Factory : Singleton<Factory>
         return mark;
     }
 
-    public Enemy_01_Bullet GetSpownEnemy01_Bullet(Vector3 position, Quaternion rotation)
+    public Enemy_01_Bullet GetSpownEnemy01_Bullet(Vector3 position, float forward)
     {
         Enemy_01_Bullet bullet = enemy01_bulletPool?.GetObject();
-        bullet.transform.rotation = rotation;
+        bullet.transform.localScale = new Vector3(bullet.transform.localScale.x * forward, bullet.transform.localScale.y, bullet.transform.localScale.z);
         bullet.transform.position = position;
+        bullet.forward = forward;
         return bullet;
     }
 

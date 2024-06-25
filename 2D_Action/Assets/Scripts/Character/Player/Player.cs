@@ -634,6 +634,10 @@ public class Player : MonoBehaviour, IBattler, IHealth
             animator.SetBool(IsJumpHash, false);
             moveSpeed = normalSpeed;
         }
+        else if (collision.tag == "EnemyBullet")
+        {
+            playerOnHit(15.0f);
+        }
     }
 
     bool onHitDefence = false;
@@ -643,18 +647,7 @@ public class Player : MonoBehaviour, IBattler, IHealth
     {
         if (collision.tag == "Enemy" && !onHitDefence)
         {
-            Defence(10);
-            ResetGravity();
-            rigid.AddForce(Vector2.zero);
-            rigid.AddForce(new Vector2(-inputDirection.x * 8, 3), ForceMode2D.Impulse);
-
-            // 기존 코루틴이 실행 중이라면 중지
-            if (defenceCoroutine != null)
-            {
-                StopCoroutine(defenceCoroutine);
-            }
-
-            defenceCoroutine = StartCoroutine(OnHitDefence());
+            playerOnHit(10.0f);
         }
     }
 
@@ -669,6 +662,22 @@ public class Player : MonoBehaviour, IBattler, IHealth
                 defenceCoroutine = null;
             }
         }
+    }
+
+    private void playerOnHit(float damege)
+    {
+        Defence(damege);
+        ResetGravity();
+        rigid.AddForce(Vector2.zero);
+        rigid.AddForce(new Vector2(-inputDirection.x * 8, 3), ForceMode2D.Impulse);
+
+        // 기존 코루틴이 실행 중이라면 중지
+        if (defenceCoroutine != null)
+        {
+            StopCoroutine(defenceCoroutine);
+        }
+
+        defenceCoroutine = StartCoroutine(OnHitDefence());
     }
 
     private IEnumerator OnHitDefence()
@@ -695,6 +704,10 @@ public class Player : MonoBehaviour, IBattler, IHealth
         if(count > 0)
         {
             skillCost = skillCost + count;
+            if(skillCost > 5)
+            {
+                skillCost = 5;
+            }
             SkillCostChang?.Invoke(skillCost);
         }
         target.Defence((AttackPower * 3) * (count + 1) );

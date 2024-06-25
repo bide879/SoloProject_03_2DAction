@@ -14,6 +14,8 @@ public class Enemy_01_Bullet : RecycleObject
     /// </summary>
     private float lifeTime = 10.0f;
 
+    public float forward = 1;
+
 
     protected override void OnEnable()
     {
@@ -37,7 +39,7 @@ public class Enemy_01_Bullet : RecycleObject
         {
             return;
         }
-        transform.Translate(Time.deltaTime * moveSpeed * Vector2.right);
+        transform.Translate(Time.deltaTime * moveSpeed * Vector2.right * forward);
     }
 
     /// <summary>

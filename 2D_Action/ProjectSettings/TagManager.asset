@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - AttackRange
   - Mark
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
