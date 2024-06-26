@@ -12,10 +12,10 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
     protected float hp = 100.0f;
 
     [SerializeField]
-    private float atkPow;
+    protected float atkPow;
 
     [SerializeField]
-    private float moveSpeed; 
+    protected float moveSpeed; 
   
     public float HP
     {
@@ -102,22 +102,27 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
     /// </summary>
     protected IBattler attackTarget = null;
 
-    private Transform EnemyHPBar;
-    private Transform EnemyHPBarBG;
-    private Transform BulletSpowner;
+    protected Transform EnemyHPBar;
+    protected Transform EnemyHPBarBG;
 
-    private float enemyHPBar;
+    protected float enemyHPBar;
 
     /// <summary>
     /// 적이 가지고있는 마크 갯수
     /// </summary>
     public int markCount = Mathf.Clamp(0,0,3);
 
-    private Animator animator;
+    protected Animator animator;
 
-    private Rigidbody2D rigid;
+    protected Rigidbody2D rigid;
 
-    private float forward = 1;
+    protected float forward = 1;
+
+    protected bool isHit = false;
+
+    protected RaycastHit2D rayAttackHit;
+
+    protected RaycastHit2D rayBackHit;
 
     //readonly int IsMoveHash = Animator.StringToHash("IsMove");
     readonly int OnTurnHash = Animator.StringToHash("OnTurn");
@@ -125,28 +130,27 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
     readonly int OnHitHash = Animator.StringToHash("OnHit");
     readonly int OnDieHash = Animator.StringToHash("OnDie");
 
-    private void Awake()
+    private Vector3 enemyHPBarBGScale;
+
+    protected virtual void Awake()
     {
         EnemyHPBarBG = transform.GetChild(1);
-        EnemyHPBar = transform.GetChild(2);
-        BulletSpowner = transform.GetChild(3);
+        EnemyHPBar = EnemyHPBarBG.GetChild(0);
 
         animator = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         EnemyHPBarBG.gameObject.SetActive(false);
-        EnemyHPBar.gameObject.SetActive(false);
-    }
-    private void Update()
-    {
-        Debug.DrawRay(rigid.position + Vector2.down * 0.5f, Vector3.right * -5.0f * forward, new Color(0, 1, 0));
-        RaycastHit2D rayBackHit = Physics2D.Raycast(rigid.position + Vector2.down * 0.5f, Vector3.right * forward, -5.0f, LayerMask.GetMask("Player"));
 
-        Debug.DrawRay(rigid.position + Vector2.down * 0.5f, Vector3.right * 7.0f * forward, new Color(1, 0, 0));
-        RaycastHit2D rayAttackHit = Physics2D.Raycast(rigid.position + Vector2.down * 0.5f, Vector3.right * forward, 7.0f, LayerMask.GetMask("Player"));
+
+        enemyHPBarBGScale = new Vector3(EnemyHPBarBG.localScale.x, EnemyHPBarBG.localScale.y, EnemyHPBarBG.localScale.z);
+    }
+    protected virtual void Update()
+    {
+        EnemyRay();
 
         if (rayBackHit.collider != null)
         {
@@ -162,12 +166,21 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
         }
     }
 
-    void Update_Idle()
+    protected virtual void EnemyRay()
+    {
+        Debug.DrawRay(rigid.position + Vector2.down * 0.5f, Vector3.right * -5.0f * forward, new Color(0, 1, 0));
+        rayBackHit = Physics2D.Raycast(rigid.position + Vector2.down * 0.5f, Vector3.right * forward, -5.0f, LayerMask.GetMask("Player"));
+
+        Debug.DrawRay(rigid.position + Vector2.down * 0.5f, Vector3.right * 7.0f * forward, new Color(1, 0, 0));
+        rayAttackHit = Physics2D.Raycast(rigid.position + Vector2.down * 0.5f, Vector3.right * forward, 7.0f, LayerMask.GetMask("Player"));
+    }
+
+    protected virtual void Update_Idle()
     {
         State = BehaviorState.Idle;
     }
 
-    void Update_Attack()
+    protected virtual void Update_Attack()
     {
         if(State != BehaviorState.Turn)
         {
@@ -177,20 +190,21 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
         }
     }
 
-    public void OnFire()
+    protected virtual void OnFire()
     {
-        Factory.Instance.GetSpownEnemy01_Bullet(BulletSpowner.position, forward);
+
     }
 
-    void Update_Turn()
+    protected virtual void Update_Turn()
     {
         if(State != BehaviorState.Turn)
         {
             StartCoroutine(OnTurnCoolTime());
         }
+
     }
 
-    void Update_Dead()
+    protected virtual void Update_Dead()
     {
 
     }
@@ -207,9 +221,28 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
         forward = -forward;
         animator.SetTrigger(OnTurnHash);
         yield return new WaitForSeconds(0.35f);
+        if (isHit)
+        {
+            yield return new WaitForSeconds(0.2f);
+        }
         transform.localScale = new Vector3(forward, 1, 1);
+        TurnHPBar();
         yield return new WaitForSeconds(1f);
+
         State = BehaviorState.Idle;
+    }
+
+
+    public void TurnHPBar()
+    {
+        if (forward < 0)
+        {
+            EnemyHPBarBG.localScale = new Vector3(EnemyHPBarBG.localScale.x * forward, EnemyHPBarBG.localScale.y, EnemyHPBarBG.localScale.z);
+        }
+        else 
+        {
+            EnemyHPBarBG.localScale = enemyHPBarBGScale;
+        }
     }
 
     /// <summary>
@@ -227,23 +260,32 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
     /// <param name="damage">내가 받은 순수 데미지</param>
     public void Defence(float damage)
     {
-        if (EnemyHPBar.gameObject)
+        DefenceAddForce();
+        if (EnemyHPBarBG.gameObject)
         {
             EnemyHPBarBG.gameObject.SetActive(true);
-            EnemyHPBar.gameObject.SetActive(true);
         }
         if (IsAlive)
         {
-            //Time.timeScale = 0.1f;
-
+            isHit = true;
             animator.SetTrigger(OnHitHash);
 
             float final = Mathf.Max(0, damage - DefencePower);  // 0 이하로는 데미지가 내려가지 않는다.
             HP -= final;
 
-            EnemyHPBar.localScale = new Vector3 (enemyHPBar,1,1);
+            EnemyHPBar.localScale = new Vector3 (enemyHPBar, 1,1);
             onHit?.Invoke(Mathf.RoundToInt(final));
         }
+    }
+
+    protected virtual void DefenceAddForce()
+    {
+
+    }
+
+    public void OnHitEnd()
+    {
+        isHit = false;
     }
 
     /// <summary>

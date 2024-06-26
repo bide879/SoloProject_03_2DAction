@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,2947 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Floating Shield Flame_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 454
+        width: 52
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffc82c52ffcedc24ea2e1d1ecff56ebe
+      internalID: -1964045834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_1
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 454
+        width: 52
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 204678cc6a2b87148a21447830f113a0
+      internalID: -230143273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_2
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 454
+        width: 52
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ed11ce9882b4844cbcf9b8075a1b4a4
+      internalID: -1204004453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_3
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 454
+        width: 52
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 397e231cb6af5a9408df58c6133394e4
+      internalID: 1246268493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_4
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 454
+        width: 51
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c3a69d7644f7264ab5649f471e4c80f
+      internalID: 1068873771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_5
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 454
+        width: 55
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 042870cb1be07284ebe6f2fba23f9ffc
+      internalID: -1282191987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_6
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 454
+        width: 52
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a49d24801a0ac974b88cd38ac9f6d2ca
+      internalID: -1834974976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_7
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 454
+        width: 52
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ecf3477f969c3343aead67f14efe7ee
+      internalID: -1585853268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_8
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 454
+        width: 52
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9186b73009c447240a64b5b57c57dea1
+      internalID: 978590714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_9
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 454
+        width: 51
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 748af5b856abb6344a46f0fe80c30fcd
+      internalID: 1524586450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_10
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 454
+        width: 51
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d478dfe188957342a6c8c0690f02c24
+      internalID: -1025874222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_11
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 454
+        width: 51
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 791c9093d06a7ce41861273a5ef37abf
+      internalID: 402392774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_12
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 454
+        width: 51
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 555c9e507f24708469bc6a77861e7912
+      internalID: 1162903664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_13
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 454
+        width: 51
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1d24b0dbec6d474d844a94faad10360
+      internalID: -85773249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_14
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 454
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 213fb13bfb9bfd245aee6e0ac863968c
+      internalID: 1067878760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_15
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 468
+        width: 10
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eab897e741bf694db166e633746391e
+      internalID: 908808981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_16
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 375
+        width: 36
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfae97234d7c130468dd6e8d421e8d39
+      internalID: -2052397199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_17
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 372
+        width: 41
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4a8428afd89a5c47957c266bf9dc2c6
+      internalID: 1791429102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_18
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 388
+        width: 51
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68fa92eba8fd65a408d214b2c8eccfeb
+      internalID: -1144355864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_19
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 388
+        width: 52
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c30a38fc3d28d14e8aa129584cac6d5
+      internalID: -1569555694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_20
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 388
+        width: 52
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a53f432286dc08c48bcf07c014871831
+      internalID: 1238112707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_21
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 388
+        width: 52
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b7cc29265323b34eb164249f0af5ffc
+      internalID: 1805763406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_22
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 388
+        width: 43
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c882a65f6412d4a43a3593cd8b0a9413
+      internalID: 1483612997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_23
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 376
+        width: 34
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 118ac64cd1c4bab4aa73dec396f981a2
+      internalID: 528220043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_24
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 374
+        width: 39
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf342922579d84649a9230e3d03c823c
+      internalID: -1796741918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_25
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 388
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7ce7c52085a3cd4c95075070652ba94
+      internalID: -1851847426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_26
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 387
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c2782d8e7df1924dbaa1c82c371fd75
+      internalID: -252947653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_27
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 378
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab5e1198f07cb1842b88f79a823cc9a4
+      internalID: -1340587065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_28
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 405
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a6aa911e20eda64f8a777e7e6a32bb5
+      internalID: -1830260898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_29
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 405
+        width: 41
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d8ea7e549f39942af0c6bfddca7fd3
+      internalID: -1925952487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_30
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 405
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 392902fdaa0595243b4a42a06b770e63
+      internalID: -742004556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_31
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 386
+        width: 26
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 333462b4d6e61df45bef3997182fc8cd
+      internalID: -1270197542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_32
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 386
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d88ea7928c1d6842aaf57d85e847183
+      internalID: -2071790003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_33
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 386
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbdf4693937f91f4481c2cf48afdf311
+      internalID: -2069143655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_34
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 402
+        width: 10
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9b81643594d6d24fae888dcb4208930
+      internalID: -213704766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_35
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 383
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 567aee0ecf6411445adc3cf64d5acdc1
+      internalID: -1134267336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_36
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 370
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9268d55d99ae0104aba8c3eefe7a87f5
+      internalID: 531067393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_37
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 370
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f59ce28498adb9d4888983f084c97cb2
+      internalID: -1932304742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_38
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 291
+        width: 39
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2250dd6b7b0a4ba41a361e52b961e866
+      internalID: -988760461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_39
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 303
+        width: 30
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97a4a34b9e9bf3b40831f8a07fb086ac
+      internalID: -1991324837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_40
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 303
+        width: 29
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc361e259789cae45acdc2f70fbcb1bb
+      internalID: -865489663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_41
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 303
+        width: 30
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df0b4afc11d9a849b1233e76bb8cbe8
+      internalID: 1434375974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_42
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 303
+        width: 29
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f385ea3c7a433824f9d8ec00285d1056
+      internalID: 1323926749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_43
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 303
+        width: 34
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1e49c19379d324db6f315237eb3fa0
+      internalID: 1562730122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_44
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 347
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37fce41d9df63b44fb32a93e50628426
+      internalID: -1016947856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_45
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 305
+        width: 16
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5265b684a0330894e910d70c65ff5a43
+      internalID: -80627605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_46
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 347
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1105e14f79bbc8542a026b1ad9dcaec9
+      internalID: -54405891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_47
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 304
+        width: 18
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3bc49799f6cd8341a49d1a8785ab8f7
+      internalID: -2140796928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_48
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 303
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4e2d34253269b14c93e33ccbcb042bd
+      internalID: 1307483633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_49
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 300
+        width: 39
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b19e4010ebd4b44ca65282fc6968572
+      internalID: -59543017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_50
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 302
+        width: 33
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 805acbdffd030c241bd543d4af5eda87
+      internalID: -57485368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_51
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 301
+        width: 34
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2d70524e77c9b149932306a0b499322
+      internalID: 1839592065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_52
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 303
+        width: 24
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 451e0a66f4a108c45b87e06da28d165c
+      internalID: 317000280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_53
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 303
+        width: 30
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b10ac6b9cac7a45a8cb8433a88e5ca
+      internalID: -494257544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_54
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 306
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2ad8f086be6e8849820dba34cdf31da
+      internalID: -1675488068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_55
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 303
+        width: 31
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdf28c5e4baf9564991640a9079e896a
+      internalID: -244155958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_56
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 301
+        width: 34
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5178be7ae1412b48af721c805568ff8
+      internalID: -1050524256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_57
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 300
+        width: 35
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83f6daa3b10fc01469540d73763d6761
+      internalID: -889261862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_58
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 306
+        width: 30
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e47b906a32d6c4546a9c4cefc3c4873b
+      internalID: -1159915465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_59
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 310
+        width: 28
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05457f2eb98a907449e06e7ed2a1678f
+      internalID: 1836883186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_60
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 306
+        width: 30
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 278ae822c7eb2e04cba3e913d10c140f
+      internalID: 357872519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_61
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 347
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca7c5e7c6a83c6d49bd1a4562a49ebc3
+      internalID: -1590072115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_62
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 305
+        width: 17
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4cf2cb0fb9309044920b458d788e735
+      internalID: -933038828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_63
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 319
+        width: 9
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f532fb3986b68f849b8ef8feeaca5a17
+      internalID: -1383198816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_64
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 351
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc2e587b097b6634399c0d3cf910129a
+      internalID: 1203765599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_65
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 305
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0425ccf193a73341b99efebf75388fa
+      internalID: -2098740931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_66
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 333
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f56019f9e3b2f004bae83cadec76eb02
+      internalID: -1212613644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_67
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 315
+        width: 4
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a658ed40dfd2c3848a90048596143d96
+      internalID: 348407574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_68
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 318
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85a96540cedaddf4986103d5045b9535
+      internalID: -74549399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_69
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 305
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd6c9bfc7fdb09d4d9e5d9be5fc11b39
+      internalID: -1839562001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_70
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 304
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8701412d7a10ea3489a79c02f6d75963
+      internalID: -331772096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_71
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 306
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 659521cad0f6d0848923ac2db99a600a
+      internalID: -1598515592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_72
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 307
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fff4c96edbdfc3e4b887ccec96aabc3e
+      internalID: 2143138864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_73
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 306
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24271ac41430d5b40b40a7cdd286389e
+      internalID: 1862617102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_74
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 222
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 108d446695f285a4aba4699c4de003e0
+      internalID: -2110967374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_75
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 233
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 940a79011a8cd00409fc5626e43dc7ce
+      internalID: -1912188086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_76
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 234
+        width: 13
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d6c895f64eb3f74e80951b99e2a3891
+      internalID: 2064912109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_77
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 260
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcb458da4ed44ef479abfb3c4ebd0446
+      internalID: -1160171432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_78
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 238
+        width: 23
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e922da532f71c4f44a8685e11b9a4efd
+      internalID: 481636977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_80
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 250
+        width: 35
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfa8f714c611829448376bc4315e9410
+      internalID: 1628444578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_81
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 250
+        width: 35
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ff70a85569c7f47a6a6c7ab0cad9d5
+      internalID: -1623760124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_82
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 250
+        width: 35
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a86e3596bf8884c8888e4ebb57a906
+      internalID: -93986907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_83
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 250
+        width: 35
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbb79c20d158a3340985ee95778714d0
+      internalID: 1430683769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_84
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 241
+        width: 41
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecddc6ba562acd94a9ec2a3b5fecb0e8
+      internalID: -266857860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_85
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 241
+        width: 37
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b97c01007dfaaf419cd1127e88f13fe
+      internalID: -1966661608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_86
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 241
+        width: 41
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a67c12084fb98c4fbb51eed3c29b321
+      internalID: 1718616333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_87
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 223
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f3c7f42a3185474caace5d49f0f6107
+      internalID: 121750218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_88
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 223
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5cd6a68efc339f4c9bbc7fe034b3135
+      internalID: 7941134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_89
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 223
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 671affdffae82184aa168afbbbcf5707
+      internalID: 1528491248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_90
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 223
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb0e815267875f45bdbc937632ae4fc
+      internalID: -232527229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_91
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 223
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0305db4c63bfa0e408dad8b8d8a725e8
+      internalID: 1480934203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_92
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 255
+        width: 56
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beee328a23dc5294fb4f030a15c73942
+      internalID: 1019311775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_93
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 239
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d2234369e38d0345a8f95d8b4dc764f
+      internalID: -1524395189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_94
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 223
+        width: 20
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbee81de9bac26644a06513566dce649
+      internalID: 1200615236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_95
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 223
+        width: 20
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c0beb19d03aaaf44a83afe6bcf49025
+      internalID: -1001600570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_96
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 223
+        width: 20
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5974b35c84a6104b96fe61aefeed5b3
+      internalID: -1630581241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_97
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 223
+        width: 20
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3b6417418c406f4a80c1619d8b3a54d
+      internalID: 1175297677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_98
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 223
+        width: 23
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24b0863d11d2aae47baa1313e00a9f76
+      internalID: -16929130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_99
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 223
+        width: 20
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dda292bd11d4bd24abd2c58a900a320d
+      internalID: -1549851261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_100
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 239
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 830a3d9cb06f8744f9ce65193eacbaa9
+      internalID: 545028459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_101
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 256
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f4e1bdd883165241b78c730a8ac0ff8
+      internalID: 1382573669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_102
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 243
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c42efb55528638b47b6526d630d476ae
+      internalID: 1467563113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_104
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 234
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eeda0da950c7984194bbe4cc43fbffb
+      internalID: -371368560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_105
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 228
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb385ab90791144aaa870481f6840c1
+      internalID: -2111953478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_106
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 236
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f38786ded2b87f4c9c46a9502c329d2
+      internalID: -1329108023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_107
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 234
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4041b161480383948b656ea0566a809c
+      internalID: 743249357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_108
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 235
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6bdef059d08f3a45a31eb7f13ba1784
+      internalID: 1513773978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_109
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 235
+        width: 20
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e7b488e27cf26c4985409e95d239832
+      internalID: -1568109945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_110
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 233
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 758066be7bf2c9b4caf73d564b27c861
+      internalID: 1917593268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_111
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 231
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eac7c3274b1365f4683da0513472f82e
+      internalID: -1457882353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_112
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 225
+        width: 26
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88b05e860e097c043aca1351937265be
+      internalID: 588741878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_113
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 221
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae13c3461ae452b43a35f8a0f995c922
+      internalID: 2111804907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_114
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 221
+        width: 11
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2561c237bae443e4a82d8ca00536303c
+      internalID: -1582237429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_115
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 170
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a407cb74705cc84e84be9964681032c
+      internalID: -1476713373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_116
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 168
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 378271d8f24623841ba465c3a57b48da
+      internalID: 533561167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_117
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 171
+        width: 22
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f73a7bc7ffa06448c04ff250d284a9
+      internalID: 953161642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_118
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 168
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b40177af2525f94cb47ebc7dce4fc8e
+      internalID: -562431762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_119
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 183
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc39f160dec1d7d44a5495494957db7b
+      internalID: 541979410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_120
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 198
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34b4cf85eccefd544bf7187fe01d715e
+      internalID: 414636067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_121
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 184
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bab1ab1b779bb9c45994262e8e50b954
+      internalID: -608375199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_122
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 186
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd2bd147554318148852cde5c34ab4b1
+      internalID: -368489346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_123
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 187
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 121cdc2aa18821049b053e0bb9a68961
+      internalID: 1892575953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_124
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 186
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bf7aeb0f965cbb4c86b479a200521a9
+      internalID: 552332452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_125
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 185
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 467b9450ffe1e7a4fbe6cdd5671d717c
+      internalID: 970061286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_126
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 184
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b197db75771bfc14a86b0428d5390eb8
+      internalID: -384285881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_127
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 187
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 251da189a895f134e98aeab48ff7c23e
+      internalID: 1612069982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_128
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 185
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76ed58d413637ee4c93622f42d5cd9a9
+      internalID: 408571604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_129
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 183
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 748d8fb72567d054aa7b50ca486dd8c2
+      internalID: -890658281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_130
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 185
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c98423854c5e604b99fb0f85783c366
+      internalID: 694853026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_131
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 184
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b34f76f2b1c91054898e2fae34c88dde
+      internalID: 616617823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_132
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 190
+        width: 6
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad60b283252cd0541b3c4325f19cdf58
+      internalID: 774091426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_133
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 183
+        width: 9
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 584c13ed7ccdafd47a5827a5cd2996c2
+      internalID: 845324297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_134
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 190
+        width: 7
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 299d43e37d684404293275ba7a33a667
+      internalID: -1140660440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_135
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 190
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c752efd9ae5180f4799ed1f14d97b7c8
+      internalID: -1500502031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_136
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 187
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ecf3039f6dc7db4b920d88b1a6f7348
+      internalID: 165077539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_137
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 188
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4358532c9bdcd7649a124084f3a19a8d
+      internalID: -2129151185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_138
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 174
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53aef5695f3837a47b59bfc48423b1ec
+      internalID: -1484146513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_139
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 173
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cb1bba897105a842a16cc9f1ed24061
+      internalID: 2125851730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_140
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 134
+        width: 35
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab0bcf1d86817654e9abad74eb913925
+      internalID: 1281509346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating Shield Flame_141
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 176
+        width: 2
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67e36d1b25d31004ca67eb11aed27dfc
+      internalID: 206112826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +3072,149 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Floating Shield Flame_0: -1964045834
+      Floating Shield Flame_1: -230143273
+      Floating Shield Flame_10: -1025874222
+      Floating Shield Flame_100: 545028459
+      Floating Shield Flame_101: 1382573669
+      Floating Shield Flame_102: 1467563113
+      Floating Shield Flame_103: -820528641
+      Floating Shield Flame_104: -371368560
+      Floating Shield Flame_105: -2111953478
+      Floating Shield Flame_106: -1329108023
+      Floating Shield Flame_107: 743249357
+      Floating Shield Flame_108: 1513773978
+      Floating Shield Flame_109: -1568109945
+      Floating Shield Flame_11: 402392774
+      Floating Shield Flame_110: 1917593268
+      Floating Shield Flame_111: -1457882353
+      Floating Shield Flame_112: 588741878
+      Floating Shield Flame_113: 2111804907
+      Floating Shield Flame_114: -1582237429
+      Floating Shield Flame_115: -1476713373
+      Floating Shield Flame_116: 533561167
+      Floating Shield Flame_117: 953161642
+      Floating Shield Flame_118: -562431762
+      Floating Shield Flame_119: 541979410
+      Floating Shield Flame_12: 1162903664
+      Floating Shield Flame_120: 414636067
+      Floating Shield Flame_121: -608375199
+      Floating Shield Flame_122: -368489346
+      Floating Shield Flame_123: 1892575953
+      Floating Shield Flame_124: 552332452
+      Floating Shield Flame_125: 970061286
+      Floating Shield Flame_126: -384285881
+      Floating Shield Flame_127: 1612069982
+      Floating Shield Flame_128: 408571604
+      Floating Shield Flame_129: -890658281
+      Floating Shield Flame_13: -85773249
+      Floating Shield Flame_130: 694853026
+      Floating Shield Flame_131: 616617823
+      Floating Shield Flame_132: 774091426
+      Floating Shield Flame_133: 845324297
+      Floating Shield Flame_134: -1140660440
+      Floating Shield Flame_135: -1500502031
+      Floating Shield Flame_136: 165077539
+      Floating Shield Flame_137: -2129151185
+      Floating Shield Flame_138: -1484146513
+      Floating Shield Flame_139: 2125851730
+      Floating Shield Flame_14: 1067878760
+      Floating Shield Flame_140: 1281509346
+      Floating Shield Flame_141: 206112826
+      Floating Shield Flame_15: 908808981
+      Floating Shield Flame_16: -2052397199
+      Floating Shield Flame_17: 1791429102
+      Floating Shield Flame_18: -1144355864
+      Floating Shield Flame_19: -1569555694
+      Floating Shield Flame_2: -1204004453
+      Floating Shield Flame_20: 1238112707
+      Floating Shield Flame_21: 1805763406
+      Floating Shield Flame_22: 1483612997
+      Floating Shield Flame_23: 528220043
+      Floating Shield Flame_24: -1796741918
+      Floating Shield Flame_25: -1851847426
+      Floating Shield Flame_26: -252947653
+      Floating Shield Flame_27: -1340587065
+      Floating Shield Flame_28: -1830260898
+      Floating Shield Flame_29: -1925952487
+      Floating Shield Flame_3: 1246268493
+      Floating Shield Flame_30: -742004556
+      Floating Shield Flame_31: -1270197542
+      Floating Shield Flame_32: -2071790003
+      Floating Shield Flame_33: -2069143655
+      Floating Shield Flame_34: -213704766
+      Floating Shield Flame_35: -1134267336
+      Floating Shield Flame_36: 531067393
+      Floating Shield Flame_37: -1932304742
+      Floating Shield Flame_38: -988760461
+      Floating Shield Flame_39: -1991324837
+      Floating Shield Flame_4: 1068873771
+      Floating Shield Flame_40: -865489663
+      Floating Shield Flame_41: 1434375974
+      Floating Shield Flame_42: 1323926749
+      Floating Shield Flame_43: 1562730122
+      Floating Shield Flame_44: -1016947856
+      Floating Shield Flame_45: -80627605
+      Floating Shield Flame_46: -54405891
+      Floating Shield Flame_47: -2140796928
+      Floating Shield Flame_48: 1307483633
+      Floating Shield Flame_49: -59543017
+      Floating Shield Flame_5: -1282191987
+      Floating Shield Flame_50: -57485368
+      Floating Shield Flame_51: 1839592065
+      Floating Shield Flame_52: 317000280
+      Floating Shield Flame_53: -494257544
+      Floating Shield Flame_54: -1675488068
+      Floating Shield Flame_55: -244155958
+      Floating Shield Flame_56: -1050524256
+      Floating Shield Flame_57: -889261862
+      Floating Shield Flame_58: -1159915465
+      Floating Shield Flame_59: 1836883186
+      Floating Shield Flame_6: -1834974976
+      Floating Shield Flame_60: 357872519
+      Floating Shield Flame_61: -1590072115
+      Floating Shield Flame_62: -933038828
+      Floating Shield Flame_63: -1383198816
+      Floating Shield Flame_64: 1203765599
+      Floating Shield Flame_65: -2098740931
+      Floating Shield Flame_66: -1212613644
+      Floating Shield Flame_67: 348407574
+      Floating Shield Flame_68: -74549399
+      Floating Shield Flame_69: -1839562001
+      Floating Shield Flame_7: -1585853268
+      Floating Shield Flame_70: -331772096
+      Floating Shield Flame_71: -1598515592
+      Floating Shield Flame_72: 2143138864
+      Floating Shield Flame_73: 1862617102
+      Floating Shield Flame_74: -2110967374
+      Floating Shield Flame_75: -1912188086
+      Floating Shield Flame_76: 2064912109
+      Floating Shield Flame_77: -1160171432
+      Floating Shield Flame_78: 481636977
+      Floating Shield Flame_79: -601261316
+      Floating Shield Flame_8: 978590714
+      Floating Shield Flame_80: 1628444578
+      Floating Shield Flame_81: -1623760124
+      Floating Shield Flame_82: -93986907
+      Floating Shield Flame_83: 1430683769
+      Floating Shield Flame_84: -266857860
+      Floating Shield Flame_85: -1966661608
+      Floating Shield Flame_86: 1718616333
+      Floating Shield Flame_87: 121750218
+      Floating Shield Flame_88: 7941134
+      Floating Shield Flame_89: 1528491248
+      Floating Shield Flame_9: 1524586450
+      Floating Shield Flame_90: -232527229
+      Floating Shield Flame_91: 1480934203
+      Floating Shield Flame_92: 1019311775
+      Floating Shield Flame_93: -1524395189
+      Floating Shield Flame_94: 1200615236
+      Floating Shield Flame_95: -1001600570
+      Floating Shield Flame_96: -1630581241
+      Floating Shield Flame_97: 1175297677
+      Floating Shield Flame_98: -16929130
+      Floating Shield Flame_99: -1549851261
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

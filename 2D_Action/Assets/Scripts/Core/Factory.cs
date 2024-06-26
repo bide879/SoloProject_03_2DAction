@@ -10,6 +10,8 @@ public class Factory : Singleton<Factory>
     MarkPool markPool;
     Enemy_01_BulletPool enemy01_bulletPool;
     Enemy_01_BulletHitPool enemy01_bulletHitPool;
+    Enemy_02_BulletPool enemy02_bulletPool;
+    Enemy_02_BulletHitPool enemy02_bulletHitPool;
 
     protected override void OnInitialize()
     {
@@ -22,6 +24,8 @@ public class Factory : Singleton<Factory>
         markPool = GetComponentInChildren<MarkPool>();
         enemy01_bulletPool = GetComponentInChildren<Enemy_01_BulletPool>();
         enemy01_bulletHitPool = GetComponentInChildren<Enemy_01_BulletHitPool>();
+        enemy02_bulletPool = GetComponentInChildren<Enemy_02_BulletPool>();
+        enemy02_bulletHitPool = GetComponentInChildren<Enemy_02_BulletHitPool>();
 
         ghostPool?.Initialize();
         dashPool?.Initialize();
@@ -30,6 +34,8 @@ public class Factory : Singleton<Factory>
         markPool?.Initialize();
         enemy01_bulletPool?.Initialize();
         enemy01_bulletHitPool?.Initialize();
+        enemy02_bulletPool?.Initialize();
+        enemy02_bulletHitPool?.Initialize();
     }
 
     public GhostChild GetSpownGhost(GameObject ghostPrefab, Vector3 position, Quaternion rotation)
@@ -83,6 +89,22 @@ public class Factory : Singleton<Factory>
     public Enemy_01_BulletHit GetSpownEnemy01_BulletHit(Vector3 position)
     {
         Enemy_01_BulletHit bulletHit = enemy01_bulletHitPool?.GetObject();
+        bulletHit.transform.position = position;
+        return bulletHit;
+    }
+
+    public Enemy_02_Bullet GetSpownEnemy02_Bullet(Vector3 position, float forward)
+    {
+        Enemy_02_Bullet bullet = enemy02_bulletPool?.GetObject();
+        bullet.transform.localScale = new Vector3(bullet.transform.localScale.x * forward, bullet.transform.localScale.y, bullet.transform.localScale.z);
+        bullet.transform.position = position;
+        bullet.forward = forward;
+        return bullet;
+    }
+
+    public Enemy_02_BulletHit GetSpownEnemy02_BulletHit(Vector3 position)
+    {
+        Enemy_02_BulletHit bulletHit = enemy02_bulletHitPool?.GetObject();
         bulletHit.transform.position = position;
         return bulletHit;
     }

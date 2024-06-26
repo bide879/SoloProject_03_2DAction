@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,217 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Flying Missile_17
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 176
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cba26006299b1f546b2ebf762e444a8d
+      internalID: 1747568274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flying Missile_18
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 178
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abe093b6daefeef418e9fb18e6ef4333
+      internalID: -652604348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flying Missile_20
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 178
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5bc8560f1e86f841a0f990108a593ce
+      internalID: 176850238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flying Missile_46
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 132
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79ba6533fcd50414fa306e7ffd8a266c
+      internalID: -1716350560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flying Missile_47
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 134
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adb1a782a7111a94894a0ac41cde555d
+      internalID: 2088734289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flying Missile_51
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 121
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 699ac78952c809148b9f0cfbd9a0872c
+      internalID: 666723206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flying Missile_52
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 122
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b0d3fb808c8ae4459406a34ed550c4b
+      internalID: -346481790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flying Missile_80
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 72
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecd382cd134bf8945bb26fae13e5e1a6
+      internalID: -2056321817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flying Missile_81
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 74
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9e5b6564dc498543aeb5dd2701fd568
+      internalID: 1721201550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flying Missile_82
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 72
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3866c7610e14b5947bed826c212faca0
+      internalID: -1529045970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +342,95 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Flying Missile_0: -1079882778
+      Flying Missile_1: 1571649883
+      Flying Missile_10: 74247858
+      Flying Missile_11: -551409268
+      Flying Missile_12: 2050004229
+      Flying Missile_13: -530064043
+      Flying Missile_14: -1444180185
+      Flying Missile_15: -684742548
+      Flying Missile_16: -25771303
+      Flying Missile_17: 1747568274
+      Flying Missile_18: -652604348
+      Flying Missile_19: 21497047
+      Flying Missile_2: -1101994904
+      Flying Missile_20: 176850238
+      Flying Missile_21: 83656075
+      Flying Missile_22: 2068541191
+      Flying Missile_23: 1731518334
+      Flying Missile_24: -1781545650
+      Flying Missile_25: 110614969
+      Flying Missile_26: -523967630
+      Flying Missile_27: 940151733
+      Flying Missile_28: -1619236868
+      Flying Missile_29: -1304169242
+      Flying Missile_3: 308663296
+      Flying Missile_30: -1940591928
+      Flying Missile_31: -1528812695
+      Flying Missile_32: -795996794
+      Flying Missile_33: -1533279862
+      Flying Missile_34: -832757965
+      Flying Missile_35: -1556965241
+      Flying Missile_36: -790086184
+      Flying Missile_37: 27917082
+      Flying Missile_38: -1326020622
+      Flying Missile_39: 1280505497
+      Flying Missile_4: 259110476
+      Flying Missile_40: 172601175
+      Flying Missile_41: -1010805152
+      Flying Missile_42: 1541038059
+      Flying Missile_43: -2070068152
+      Flying Missile_44: -1373346236
+      Flying Missile_45: -1086455091
+      Flying Missile_46: -1716350560
+      Flying Missile_47: 2088734289
+      Flying Missile_48: 2081821034
+      Flying Missile_49: -707780485
+      Flying Missile_5: -1679759572
+      Flying Missile_50: 608962728
+      Flying Missile_51: 666723206
+      Flying Missile_52: -346481790
+      Flying Missile_53: -467684952
+      Flying Missile_54: -929882511
+      Flying Missile_55: -2144560958
+      Flying Missile_56: -380996307
+      Flying Missile_57: -2015660122
+      Flying Missile_58: -1071026975
+      Flying Missile_59: 886084912
+      Flying Missile_6: -1052363934
+      Flying Missile_60: -937055210
+      Flying Missile_61: -315471972
+      Flying Missile_62: 1110423923
+      Flying Missile_63: -763175703
+      Flying Missile_64: 196015979
+      Flying Missile_65: 260072716
+      Flying Missile_66: -895620297
+      Flying Missile_67: 677866284
+      Flying Missile_68: -2112887070
+      Flying Missile_69: -1655500020
+      Flying Missile_7: 1818146710
+      Flying Missile_70: 1112274152
+      Flying Missile_71: 1223111775
+      Flying Missile_72: -2083968853
+      Flying Missile_73: -156602871
+      Flying Missile_74: 2056680968
+      Flying Missile_75: 1882003599
+      Flying Missile_76: -2025025546
+      Flying Missile_77: 912145437
+      Flying Missile_78: 275237332
+      Flying Missile_79: 1211885864
+      Flying Missile_8: 503715750
+      Flying Missile_80: -2056321817
+      Flying Missile_81: 1721201550
+      Flying Missile_82: -1529045970
+      Flying Missile_83: 1132123439
+      Flying Missile_84: -58281820
+      Flying Missile_85: -1731773811
+      Flying Missile_86: -597775846
+      Flying Missile_87: -692461948
+      Flying Missile_9: 472931457
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

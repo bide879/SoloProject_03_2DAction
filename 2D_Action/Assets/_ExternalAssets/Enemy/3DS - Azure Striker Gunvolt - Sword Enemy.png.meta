@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,910 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_0
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 1419
+        width: 53
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49de404c81178924fb2a5364b7efa941
+      internalID: 1441992908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1419
+        width: 53
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b6058388802f041ac0797b434d171a
+      internalID: 1621190720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1419
+        width: 53
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56eb21aacfb74e7438f0e02b42108855
+      internalID: -2011704490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_3
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 1419
+        width: 53
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a84c4e57d04f21489caab33d689f2de
+      internalID: 1023397327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_4
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 841
+        width: 53
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8beaf80d2a19394f8701ec34c138b90
+      internalID: 1995449473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_5
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 841
+        width: 79
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 971107c29117bac41bfa01df4c34a63f
+      internalID: -2146170275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_6
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 841
+        width: 75
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e24942e75e303204ebdd7b203820c135
+      internalID: -1625449194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_7
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 799
+        width: 67
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ab72b3789d5284895241b5edd6d906
+      internalID: -1365821793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 742
+        width: 72
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1131dce48c827c4418cbf739b63cda77
+      internalID: -695710661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_9
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 742
+        width: 118
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 399ddfbf059006c42ab79d68cb04b130
+      internalID: -335229255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_10
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 742
+        width: 102
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddb0407eae76b8b47aac9b9884d8c582
+      internalID: 1779541400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_11
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 743
+        width: 66
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 417d4356afe7ae048909e9d3b23a227a
+      internalID: 1066680141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 686
+        width: 66
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eb4934b214e2d54f845f9b550bb26cc
+      internalID: 405777341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_13
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 686
+        width: 66
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bccd2dc3e5648024ba898abb81675331
+      internalID: -459630362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_14
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 602
+        width: 57
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9ac65589fe71a54dbd35c4f2c4f5f8c
+      internalID: -1551471436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_15
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 602
+        width: 57
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db8c7ebd86978bb43ab858214c19c3e3
+      internalID: 760315074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_16
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 602
+        width: 57
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8569c287788f00543821964738264e1b
+      internalID: 662878643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_17
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 531
+        width: 68
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03526acaa5d08564891a298590976818
+      internalID: -633163909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_18
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 481
+        width: 76
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d7bd26e1dd78cd4d893478236663720
+      internalID: -114898218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_19
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 481
+        width: 76
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7f49009b6814204cb3975fdc1387792
+      internalID: 1622723624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_20
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 422
+        width: 61
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22486d581d183b047b6a36eef9101daa
+      internalID: 1387640295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_21
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 359
+        width: 62
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 253dbef6f6cb7884f86f8968b1df82db
+      internalID: 42354221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_22
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 359
+        width: 62
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d2ead7901c92014b907a1119c5820ed
+      internalID: 397119900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_23
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 331
+        width: 70
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f62cff6aa54d7df40a8357f1902efb06
+      internalID: 1475748552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_24
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 331
+        width: 70
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04b991c6603488343ae8b662088e3848
+      internalID: -763185079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_25
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 53
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fed3c7fcebeb8f34fa13717648437786
+      internalID: -506808870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_26
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 2
+        width: 53
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fca4f2f3e333eea4396ed3f775aa1ef6
+      internalID: -1177961003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_27
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 2
+        width: 53
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac6ce2c4ade5ff548b4df6693a97eeba
+      internalID: 138964387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_28
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 146
+        width: 80
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bca602c88cd0e44d8c4ed408b8f8870
+      internalID: 593169833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_29
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 146
+        width: 80
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8787ea2239296974f894717b73ade595
+      internalID: -433316809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_30
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 146
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a364f511ce87c647b65264803fa5a9c
+      internalID: -380072354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_31
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 146
+        width: 80
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a51e4ea14dfd8c4c961f455c5cb5e3e
+      internalID: 1262741622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_32
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 146
+        width: 80
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17d584d3e249c5e44862bb2eb119ac03
+      internalID: -1068209460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_33
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 60
+        width: 80
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8de6874437efed4e828fa6218dd0be5
+      internalID: -1854256964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_34
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 60
+        width: 80
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1683dd3c6d06f374ea7d78acd4de29e2
+      internalID: -1863020336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_35
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 60
+        width: 80
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83568423ac14d81498ad102fc9d66f97
+      internalID: -1195922149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_36
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 60
+        width: 80
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07a74cea5aece224b92ae394156bbd20
+      internalID: 780883155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_37
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 60
+        width: 80
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7303e8a7ecb43a45ad9f03cdb926726
+      internalID: -1137668848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_38
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 902
+        width: 83
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1447514aa554eaf47a1cb25fdf221f7f
+      internalID: -933715487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_39
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 902
+        width: 83
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e64e79fbc131dd74b8389c0133ee294d
+      internalID: 120434246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_40
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 902
+        width: 83
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0662134099ace384ead641af46b7ae0c
+      internalID: 375241835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_41
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 902
+        width: 83
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 645c49bc02704a6408869511efc1c5a3
+      internalID: -755827552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Sword Enemy_42
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 902
+        width: 83
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aed38da8235daef459c4fbf757f17b59
+      internalID: 1775803572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +1022,50 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      3DS - Azure Striker Gunvolt - Sword Enemy_0: 1441992908
+      3DS - Azure Striker Gunvolt - Sword Enemy_1: 1621190720
+      3DS - Azure Striker Gunvolt - Sword Enemy_10: 1779541400
+      3DS - Azure Striker Gunvolt - Sword Enemy_11: 1066680141
+      3DS - Azure Striker Gunvolt - Sword Enemy_12: 405777341
+      3DS - Azure Striker Gunvolt - Sword Enemy_13: -459630362
+      3DS - Azure Striker Gunvolt - Sword Enemy_14: -1551471436
+      3DS - Azure Striker Gunvolt - Sword Enemy_15: 760315074
+      3DS - Azure Striker Gunvolt - Sword Enemy_16: 662878643
+      3DS - Azure Striker Gunvolt - Sword Enemy_17: -633163909
+      3DS - Azure Striker Gunvolt - Sword Enemy_18: -114898218
+      3DS - Azure Striker Gunvolt - Sword Enemy_19: 1622723624
+      3DS - Azure Striker Gunvolt - Sword Enemy_2: -2011704490
+      3DS - Azure Striker Gunvolt - Sword Enemy_20: 1387640295
+      3DS - Azure Striker Gunvolt - Sword Enemy_21: 42354221
+      3DS - Azure Striker Gunvolt - Sword Enemy_22: 397119900
+      3DS - Azure Striker Gunvolt - Sword Enemy_23: 1475748552
+      3DS - Azure Striker Gunvolt - Sword Enemy_24: -763185079
+      3DS - Azure Striker Gunvolt - Sword Enemy_25: -506808870
+      3DS - Azure Striker Gunvolt - Sword Enemy_26: -1177961003
+      3DS - Azure Striker Gunvolt - Sword Enemy_27: 138964387
+      3DS - Azure Striker Gunvolt - Sword Enemy_28: 593169833
+      3DS - Azure Striker Gunvolt - Sword Enemy_29: -433316809
+      3DS - Azure Striker Gunvolt - Sword Enemy_3: 1023397327
+      3DS - Azure Striker Gunvolt - Sword Enemy_30: -380072354
+      3DS - Azure Striker Gunvolt - Sword Enemy_31: 1262741622
+      3DS - Azure Striker Gunvolt - Sword Enemy_32: -1068209460
+      3DS - Azure Striker Gunvolt - Sword Enemy_33: -1854256964
+      3DS - Azure Striker Gunvolt - Sword Enemy_34: -1863020336
+      3DS - Azure Striker Gunvolt - Sword Enemy_35: -1195922149
+      3DS - Azure Striker Gunvolt - Sword Enemy_36: 780883155
+      3DS - Azure Striker Gunvolt - Sword Enemy_37: -1137668848
+      3DS - Azure Striker Gunvolt - Sword Enemy_38: -933715487
+      3DS - Azure Striker Gunvolt - Sword Enemy_39: 120434246
+      3DS - Azure Striker Gunvolt - Sword Enemy_4: 1995449473
+      3DS - Azure Striker Gunvolt - Sword Enemy_40: 375241835
+      3DS - Azure Striker Gunvolt - Sword Enemy_41: -755827552
+      3DS - Azure Striker Gunvolt - Sword Enemy_42: 1775803572
+      3DS - Azure Striker Gunvolt - Sword Enemy_5: -2146170275
+      3DS - Azure Striker Gunvolt - Sword Enemy_6: -1625449194
+      3DS - Azure Striker Gunvolt - Sword Enemy_7: -1365821793
+      3DS - Azure Striker Gunvolt - Sword Enemy_8: -695710661
+      3DS - Azure Striker Gunvolt - Sword Enemy_9: -335229255
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
