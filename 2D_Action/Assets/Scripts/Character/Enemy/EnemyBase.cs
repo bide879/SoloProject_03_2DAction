@@ -12,9 +12,6 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
     protected float hp = 100.0f;
 
     [SerializeField]
-    protected float atkPow;
-
-    [SerializeField]
     protected float moveSpeed; 
   
     public float HP
@@ -197,7 +194,7 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
 
     protected virtual void Update_Turn()
     {
-        if(State != BehaviorState.Turn)
+        if(State != BehaviorState.Turn && !isHit)
         {
             StartCoroutine(OnTurnCoolTime());
         }
@@ -221,10 +218,7 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
         forward = -forward;
         animator.SetTrigger(OnTurnHash);
         yield return new WaitForSeconds(0.35f);
-        if (isHit)
-        {
-            yield return new WaitForSeconds(0.2f);
-        }
+
         transform.localScale = new Vector3(forward, 1, 1);
         TurnHPBar();
         yield return new WaitForSeconds(1f);

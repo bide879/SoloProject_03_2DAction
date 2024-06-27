@@ -9,6 +9,7 @@ TagManager:
   - AttackRange
   - Mark
   - EnemyBullet
+  - EnemyAttackRange
   layers:
   - Default
   - TransparentFX

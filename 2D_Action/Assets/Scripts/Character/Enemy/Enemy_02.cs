@@ -26,8 +26,8 @@ public class Enemy_02 : EnemyBase
 
     protected override void OnFire()
     {
-        Factory.Instance.GetSpownEnemy02_Bullet(BulletSpowner1.position, forward);
-        Factory.Instance.GetSpownEnemy02_Bullet(BulletSpowner2.position, forward);
+        Factory.Instance.GetSpownEnemy02_Bullet(BulletSpowner1.position, forward, attackPower);
+        Factory.Instance.GetSpownEnemy02_Bullet(BulletSpowner2.position, forward, attackPower);
     }
 
     protected override void DefenceAddForce()

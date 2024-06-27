@@ -12,10 +12,11 @@ public class Enemy_01_Bullet : RecycleObject
     /// <summary>
     /// 총알의 수명
     /// </summary>
-    private float lifeTime = 10.0f;
+    private float lifeTime = 5.0f;
 
     public float forward = 1;
 
+    public float damage;
 
     protected override void OnEnable()
     {

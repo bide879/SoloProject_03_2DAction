@@ -114,7 +114,7 @@ public class Player : MonoBehaviour, IBattler, IHealth
         get => hp;
         set
         {
-            if (IsAlive)     // 살아 있을 때만 MP 변화함
+            if (IsAlive)     // 살아 있을 때 확인
             {
                 hp = value;
                 if (hp <= 0.0f)    // HP가 0 이하면 사망처리
@@ -162,6 +162,11 @@ public class Player : MonoBehaviour, IBattler, IHealth
     /// </summary>
     public Action<int> onHit { get; set; }
 
+    /// <summary>
+    /// 로딩 부르는 델리게이트
+    /// </summary>
+    public Action onLoding;
+
     // 애니메이터용 해시값
     readonly int IsMoveHash = Animator.StringToHash("IsMove");
     readonly int IsJumpHash = Animator.StringToHash("IsJump");
@@ -171,6 +176,8 @@ public class Player : MonoBehaviour, IBattler, IHealth
     readonly int OnSkillHash = Animator.StringToHash("OnSkill");
     readonly int OnChargeEnergyHash = Animator.StringToHash("OnChargeEnergy");
     readonly int OnHitHash = Animator.StringToHash("OnHit");
+    readonly int OnDieHash = Animator.StringToHash("OnDie");
+    readonly int OnResurrectionHash = Animator.StringToHash("OnResurrection");
 
     #endregion
 
@@ -186,6 +193,7 @@ public class Player : MonoBehaviour, IBattler, IHealth
     {
         normalSpeed = moveSpeed;
         ghost.makeGhost = false;
+        isResurrection = false;
     }
 
     #region 플레이어 조작
@@ -229,43 +237,54 @@ public class Player : MonoBehaviour, IBattler, IHealth
 
     private void FixedUpdate()
     {
-        float h = Input.GetAxisRaw("Horizontal");
-        rigid.AddForce(Vector2.right * h, ForceMode2D.Impulse);
-
-        if (rigid.velocity.x > moveSpeed) // right max speed
+        if (isResurrection)
         {
-            rigid.velocity = new Vector2(moveSpeed, rigid.velocity.y);
-        }
-        else if (rigid.velocity.x < moveSpeed * (-1))// left max speed
-        {
-            rigid.velocity = new Vector2(moveSpeed * (-1), rigid.velocity.y);
+            hp += MaxHP;
+            skillCost += maxSkillCost;
         }
 
-        if (rigid.velocity.y < 0) //내려갈떄만 스캔
+        if (IsAlive)
         {
-            Debug.DrawRay(rigid.position, Vector3.down, new Color(0, 1, 0));
-            RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, Vector3.down, 1, LayerMask.GetMask("Ground"));
-            if (rayHit.collider != null)
+            float h = Input.GetAxisRaw("Horizontal");
+            rigid.AddForce(Vector2.right * h, ForceMode2D.Impulse);
+
+
+            if (rigid.velocity.x > moveSpeed) // right max speed
             {
-                if (rayHit.distance < 1f)
+                rigid.velocity = new Vector2(moveSpeed, rigid.velocity.y);
+            }
+            else if (rigid.velocity.x < moveSpeed * (-1))// left max speed
+            {
+                rigid.velocity = new Vector2(moveSpeed * (-1), rigid.velocity.y);
+            }
+
+
+            if (rigid.velocity.y < 0) //내려갈떄만 스캔
+            {
+                Debug.DrawRay(rigid.position, Vector3.down, new Color(0, 1, 0));
+                RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, Vector3.down, 1, LayerMask.GetMask("Ground"));
+                if (rayHit.collider != null)
                 {
-                    animator.SetBool(IsJumpHash, false);
-                    if (!isGrounded)
+                    if (rayHit.distance < 1f)
                     {
-                        StartCoroutine(GraduallyReduceSpeed());
+                        animator.SetBool(IsJumpHash, false);
+                        if (!isGrounded)
+                        {
+                            StartCoroutine(GraduallyReduceSpeed());
+                        }
+                        if (isAirDownAttack)
+                        {
+                            rigid.gravityScale = 2f;
+                            SkillCost = maxSkillCost;
+                            SkillCostChang?.Invoke(SkillCost);
+                            //StartCoroutine(HandleChargeEnergy());
+                            isAirDownAttack = false;
+                        }
+                        isGrounded = true;
+                        canJumpAttack = true;
+                        jumpCount = 0;
+                        //inputDirection = Vector2.zero;
                     }
-                    if (isAirDownAttack)
-                    {
-                        rigid.gravityScale = 2f;
-                        SkillCost = maxSkillCost;
-                        SkillCostChang?.Invoke(SkillCost);
-                        //StartCoroutine(HandleChargeEnergy());
-                        isAirDownAttack = false;
-                    }
-                    isGrounded = true;
-                    canJumpAttack = true;
-                    jumpCount = 0;
-                    //inputDirection = Vector2.zero;
                 }
             }
         }
@@ -560,7 +579,7 @@ public class Player : MonoBehaviour, IBattler, IHealth
 
         ResetGravity();
 
-        if (inputDirection.x == 0)
+        if (inputDirection.x == 0 && inputDirection.y != 0)
         {
             transform.position = new Vector2(transform.position.x, transform.position.y + previousInputDirection.y * 7);
         }
@@ -628,15 +647,35 @@ public class Player : MonoBehaviour, IBattler, IHealth
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Ground")
+        if (IsAlive)
         {
-            isGrounded = true;
-            animator.SetBool(IsJumpHash, false);
-            moveSpeed = normalSpeed;
-        }
-        else if (collision.tag == "EnemyBullet")
-        {
-            playerOnHit(15.0f);
+            if (collision.tag == "Ground")
+            {
+                isGrounded = true;
+                animator.SetBool(IsJumpHash, false);
+                moveSpeed = normalSpeed;
+            }
+            else if (collision.tag == "EnemyBullet")
+            {
+                Enemy_01_Bullet enemy01_Bullet = collision.GetComponent<Enemy_01_Bullet>();
+                Enemy_02_Bullet enemy02_Bullet = collision.GetComponent<Enemy_02_Bullet>();
+                if (enemy01_Bullet != null)
+                {
+                    playerOnHit(enemy01_Bullet.damage);
+                }
+                else if (enemy02_Bullet != null)
+                {
+                    playerOnHit(enemy02_Bullet.damage);
+                }
+            }
+            else if (collision.tag == "EnemyAttackRange")
+            {
+                EnemyBase enemy = collision.GetComponentInParent<EnemyBase>();
+                if (enemy != null)
+                {
+                    playerOnHit(enemy.attackPower);
+                }
+            }
         }
     }
 
@@ -645,21 +684,27 @@ public class Player : MonoBehaviour, IBattler, IHealth
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy" && !onHitDefence)
+        if (IsAlive)
         {
-            playerOnHit(10.0f);
+            if (collision.tag == "Enemy" && !onHitDefence)
+            {
+                playerOnHit(10.0f);
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
+        if (IsAlive)
         {
-            onHitDefence = false;
-            if (defenceCoroutine != null)
+            if (collision.tag == "Enemy")
             {
-                StopCoroutine(defenceCoroutine);
-                defenceCoroutine = null;
+                onHitDefence = false;
+                if (defenceCoroutine != null)
+                {
+                    StopCoroutine(defenceCoroutine);
+                    defenceCoroutine = null;
+                }
             }
         }
     }
@@ -686,12 +731,6 @@ public class Player : MonoBehaviour, IBattler, IHealth
         yield return new WaitForSeconds(0.5f);
         onHitDefence = false;
         defenceCoroutine = null;
-    }
-
-
-    private void Die()
-    {
-        onDie?.Invoke();
     }
 
     public void Attack(IBattler target)
@@ -726,6 +765,55 @@ public class Player : MonoBehaviour, IBattler, IHealth
 
             onHit?.Invoke(Mathf.RoundToInt(final));
         }
+    }
+
+    private void Die()
+    {
+        onDie?.Invoke();
+        animator.SetTrigger(OnDieHash);
+        DisablePlayerInput(); // 입력 비활성화
+
+        float resurrectionChance = 0.5f; // 50% 확률
+
+        if (UnityEngine.Random.value < resurrectionChance)
+        {
+            Resurrection(); // 부활
+        }
+        else
+        {
+            Debug.Log("부활 실패");
+            //onLoding?.Invoke();
+        }
+    }
+
+    // 플레이어 입력 비활성화 메서드
+    private void DisablePlayerInput()
+    {
+        inputActions.Player.Disable();
+    }
+
+    // 플레이어 입력 활성화 메서드
+    private void EnablePlayerInput()
+    {
+        inputActions.Player.Enable();
+    }
+
+    private bool isResurrection = false;
+
+    // 부활 시 입력을 다시 활성화
+    private void Resurrection()
+    {
+        animator.SetTrigger(OnResurrectionHash); // 부활 애니메이션 트리거
+        StopAllCoroutines();
+        StartCoroutine(ResurrectionEnd());
+    }
+
+    private IEnumerator ResurrectionEnd()
+    {
+        yield return new WaitForSeconds(1.0f);
+        hp = MaxHP;
+        EnablePlayerInput();
+        isResurrection = true;
     }
 
     void IHealth.Die()

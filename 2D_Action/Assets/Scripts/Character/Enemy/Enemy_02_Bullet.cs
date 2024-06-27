@@ -12,11 +12,12 @@ public class Enemy_02_Bullet : RecycleObject
     /// <summary>
     /// 총알의 수명
     /// </summary>
-    private float lifeTime = 10.0f;
+    private float lifeTime = 5.0f;
 
     public float forward = 1;
     private int hpCount = 0;
 
+    public float damage;
 
     protected override void OnEnable()
     {
@@ -65,5 +66,4 @@ public class Enemy_02_Bullet : RecycleObject
             hpCount++;
         }
     }
-
 }

@@ -17,6 +17,6 @@ public class TestEnemy : TestBase
 
     protected override void OnTest3(InputAction.CallbackContext context)
     {
-        Factory.Instance.GetSpownEnemy01_Bullet(transform.position, 1);
+        //Factory.Instance.GetSpownEnemy01_Bullet(transform.position, 1, 1);
     }
 }

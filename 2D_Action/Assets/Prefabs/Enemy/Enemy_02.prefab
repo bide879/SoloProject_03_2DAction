@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 70
-  atkPow: 0
+  atkPow: 10
   moveSpeed: 0
   maxHP: 70
   attackPower: 10

@@ -9,7 +9,6 @@ public class Enemy_01 : EnemyBase
     protected override void Awake()
     {
         base.Awake();
-
         BulletSpowner = transform.GetChild(2);
     }
 
@@ -24,7 +23,7 @@ public class Enemy_01 : EnemyBase
 
     protected override void OnFire()
     {
-        Factory.Instance.GetSpownEnemy01_Bullet(BulletSpowner.position, forward);
+        Factory.Instance.GetSpownEnemy01_Bullet(BulletSpowner.position, forward, attackPower);
     }
 
     protected override void DefenceAddForce()

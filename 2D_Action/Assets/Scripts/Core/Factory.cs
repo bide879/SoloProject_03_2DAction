@@ -77,12 +77,13 @@ public class Factory : Singleton<Factory>
         return mark;
     }
 
-    public Enemy_01_Bullet GetSpownEnemy01_Bullet(Vector3 position, float forward)
+    public Enemy_01_Bullet GetSpownEnemy01_Bullet(Vector3 position, float forward, float damage)
     {
         Enemy_01_Bullet bullet = enemy01_bulletPool?.GetObject();
         bullet.transform.localScale = new Vector3(bullet.transform.localScale.x * forward, bullet.transform.localScale.y, bullet.transform.localScale.z);
         bullet.transform.position = position;
         bullet.forward = forward;
+        bullet.damage = damage;
         return bullet;
     }
 
@@ -93,12 +94,13 @@ public class Factory : Singleton<Factory>
         return bulletHit;
     }
 
-    public Enemy_02_Bullet GetSpownEnemy02_Bullet(Vector3 position, float forward)
+    public Enemy_02_Bullet GetSpownEnemy02_Bullet(Vector3 position, float forward, float damage)
     {
         Enemy_02_Bullet bullet = enemy02_bulletPool?.GetObject();
         bullet.transform.localScale = new Vector3(bullet.transform.localScale.x * forward, bullet.transform.localScale.y, bullet.transform.localScale.z);
         bullet.transform.position = position;
         bullet.forward = forward;
+        bullet.damage = damage;
         return bullet;
     }
 

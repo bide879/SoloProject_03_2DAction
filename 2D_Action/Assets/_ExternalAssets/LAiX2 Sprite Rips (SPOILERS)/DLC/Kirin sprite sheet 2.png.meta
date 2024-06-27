@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 2048
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -121,7 +121,1351 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1808
+        width: 1157
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc8049ee8e8cca64b9e3538b1c5d3798
+      internalID: 1079730341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_1
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 1805
+        width: 315
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55e7ebd6c5d25a443bb9b0cab2bb48ea
+      internalID: -732282247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_2
+      rect:
+        serializedVersion: 2
+        x: 1490
+        y: 1819
+        width: 291
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c892947565c8c8449d564b8c36196cc
+      internalID: 406819082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_3
+      rect:
+        serializedVersion: 2
+        x: 1782
+        y: 1819
+        width: 225
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ced0a41602aacec44a411472445859af
+      internalID: -1724397908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_4
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1689
+        width: 1074
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0d7a41a40922b841bfdca5da044f5e6
+      internalID: 1638472703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_5
+      rect:
+        serializedVersion: 2
+        x: 1463
+        y: 1743
+        width: 511
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a8727872b2366449a0319bf66fa98ee
+      internalID: -1158035285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_23
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 1690
+        width: 59
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba19994f4fb61cb498d1795b1019a18f
+      internalID: -160391649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_27
+      rect:
+        serializedVersion: 2
+        x: 1465
+        y: 1692
+        width: 357
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b02a6d0ac98bb1f43b043cbc260ec675
+      internalID: -776406250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_29
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1567
+        width: 1072
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dccd3b0a2066954bb6d811dfad7e5a8
+      internalID: 27764383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_30
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 1274
+        width: 266
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 259b1b059cf059f4f9a2c3b2d4a8566d
+      internalID: 1943537397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_31
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 1282
+        width: 247
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c62fdd476cefaae4f96dc5a85889ee08
+      internalID: 632731660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_32
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1507
+        width: 117
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0481b260d338c744ad94ad77988e613
+      internalID: -236345824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_34
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 1532
+        width: 511
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cad7370f1ce9c145b8ab2f1044eb7d3
+      internalID: -1427505554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_35
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 1531
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c5ecbe60ad248f4e934745d1b04e231
+      internalID: 10588495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_36
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 1537
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2654c5c6c5736f34582af67cb9bea3bd
+      internalID: 1722061300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_37
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 1538
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fff93c9dc06d25a489d77de4fdff2ccc
+      internalID: 1208712496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_38
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1513
+        width: 357
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16f9e239d1c9d5d4eb7e02205f82b2cd
+      internalID: -101133757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_39
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 1477
+        width: 514
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77f724203c0add044b737d3fbb560a6e
+      internalID: -1176697385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_41
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 1455
+        width: 386
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 547d54350778af94a930359396efcb36
+      internalID: -712737902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_42
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 848
+        width: 242
+        height: 426
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ba16e9f2f9b27649854546e84a479b0
+      internalID: 362493977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_43
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 1016
+        width: 180
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f7e3105c39e2c341b9dc6b31cc6fe3c
+      internalID: -921154336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_44
+      rect:
+        serializedVersion: 2
+        x: 1534
+        y: 1184
+        width: 58
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58a1db46dcd51fc47bff9e5f0ff9aed1
+      internalID: -964497953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_45
+      rect:
+        serializedVersion: 2
+        x: 1612
+        y: 1200
+        width: 291
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a0f9bf24fa77c439d367aed329ed93
+      internalID: 1943769387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_46
+      rect:
+        serializedVersion: 2
+        x: 1904
+        y: 1249
+        width: 117
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b60944d004e795a4883a06ab007282f3
+      internalID: 41558639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_48
+      rect:
+        serializedVersion: 2
+        x: 1609
+        y: 1113
+        width: 143
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e3e21211437ae846a2ac2817281be7f
+      internalID: 2002155944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_49
+      rect:
+        serializedVersion: 2
+        x: 1754
+        y: 1121
+        width: 77
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16c8502c947255a4394a15ab841b3aa5
+      internalID: 550427475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_50
+      rect:
+        serializedVersion: 2
+        x: 1904
+        y: 1046
+        width: 114
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7ee8384493ff5a4a8c65fda15939ee1
+      internalID: 753787478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_56
+      rect:
+        serializedVersion: 2
+        x: 1673
+        y: 1032
+        width: 57
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5f1cbc7951b9844d8b2b70534e1dc1e
+      internalID: 151216356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_68
+      rect:
+        serializedVersion: 2
+        x: 1904
+        y: 892
+        width: 120
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 176b457e5fbe4034ba6ef8be5832fa0f
+      internalID: -1851726174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_69
+      rect:
+        serializedVersion: 2
+        x: 1348
+        y: 758
+        width: 188
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5734800837566546889eec7a7fea28e
+      internalID: 46322607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_70
+      rect:
+        serializedVersion: 2
+        x: 1534
+        y: 822
+        width: 54
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 927814e7ce2a340498e70e38efbfabe1
+      internalID: 136656578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_71
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 970
+        width: 63
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4bcffc8c0850e247a3c8b94125d6433
+      internalID: -309124241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_72
+      rect:
+        serializedVersion: 2
+        x: 1609
+        y: 898
+        width: 45
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdbb56c9c71dedb4ba58f3d2f2260d7b
+      internalID: 834313168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_73
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 446
+        width: 230
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c64f3361cde728246833c1133a416eb0
+      internalID: 146311117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_78
+      rect:
+        serializedVersion: 2
+        x: 1986
+        y: 626
+        width: 56
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b276981af7833b04e8f1071dded45e22
+      internalID: -160753813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_94
+      rect:
+        serializedVersion: 2
+        x: 1904
+        y: 592
+        width: 82
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18b3949ee26242445be4dad91d141690
+      internalID: -885898853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_96
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 697
+        width: 48
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a46aa8b9274b8c47a2a23818f6abe0b
+      internalID: -1421669417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_97
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 427
+        width: 130
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fedd17d9319b3d45b7fb2121ec7f07e
+      internalID: -1369073667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_99
+      rect:
+        serializedVersion: 2
+        x: 1904
+        y: 478
+        width: 122
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f4c4e27c11a73740a9c639ddb470829
+      internalID: 1531973416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_100
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 181
+        width: 218
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1845916268188647b3057b39971df18
+      internalID: 905768414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_102
+      rect:
+        serializedVersion: 2
+        x: 1572
+        y: 432
+        width: 26
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dde3647ca73d8b4fa5c945d5a650cf2
+      internalID: 1771057156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_103
+      rect:
+        serializedVersion: 2
+        x: 1904
+        y: 364
+        width: 96
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a8449a381f64a44bb47a9b12c7bc44c
+      internalID: -1423836534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_104
+      rect:
+        serializedVersion: 2
+        x: 2011
+        y: 373
+        width: 33
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bfe7da0fc1562f49b8634f36be3095a
+      internalID: 1788865313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_105
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 300
+        width: 175
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63416fc8fc6367844bc74b275cf81a8d
+      internalID: 1950235568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_106
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 305
+        width: 64
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c3dce0afb79cc342837e9f7e828349c
+      internalID: 1015693821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_107
+      rect:
+        serializedVersion: 2
+        x: 1910
+        y: 247
+        width: 83
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bdac57a5bf373a45bc05384226b04c8
+      internalID: -876964884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_108
+      rect:
+        serializedVersion: 2
+        x: 2007
+        y: 242
+        width: 25
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb2aaa5d9ab5e1c4bb0701655ba80d21
+      internalID: -700751008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_110
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 151
+        width: 159
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb9995448a25fe64283f60e0db906252
+      internalID: -209138663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_111
+      rect:
+        serializedVersion: 2
+        x: 1519
+        y: 70
+        width: 68
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e82faee839eb264a8a3a97ab7ef9bde
+      internalID: -1396261435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_112
+      rect:
+        serializedVersion: 2
+        x: 1910
+        y: 150
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7656046e41487a74d8205a21d5b925d5
+      internalID: -1270717109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_113
+      rect:
+        serializedVersion: 2
+        x: 2004
+        y: 151
+        width: 22
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5b02026d8090274790b5e1e2bd52252
+      internalID: 224897573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_114
+      rect:
+        serializedVersion: 2
+        x: 1306
+        y: 192
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c9c7e6b947eee34e964ec6f5a34d2a5
+      internalID: 610835172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_116
+      rect:
+        serializedVersion: 2
+        x: 1348
+        y: 41
+        width: 147
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23ea1f2eb7f64cf4bb9fb54c7e8c4941
+      internalID: -2023401047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_117
+      rect:
+        serializedVersion: 2
+        x: 1905
+        y: 38
+        width: 86
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fa353818c6d44a42881a96835eda717
+      internalID: -211359090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_118
+      rect:
+        serializedVersion: 2
+        x: 1994
+        y: 67
+        width: 47
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33be68ac92aecc04197bdeee0b661d33
+      internalID: 1031206011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_122
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 2
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fabbe2961f6c3a4daa21ff2ef1212bd
+      internalID: 455603596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_123
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 5
+        width: 67
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6175173df274e7341b1c48e00e7a270a
+      internalID: 2061203004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_124
+      rect:
+        serializedVersion: 2
+        x: 1588
+        y: 15
+        width: 11
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92c01ec4503bb184b8234a0c14352b14
+      internalID: -851855394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_126
+      rect:
+        serializedVersion: 2
+        x: 1957
+        y: 4
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52198c01314231a468c3fe415d5066e1
+      internalID: -1511340535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_127
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 8
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d9055843d4c8654bb608ef0aae2f442
+      internalID: -1827550837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_128
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 8
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efceb9c0ad2dc264695ae15b29d322bc
+      internalID: 1537296960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_131
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 1721
+        width: 378
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f46b5dc038531f64ba8bba9b808af555
+      internalID: 1051315751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_21
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 1687
+        width: 378
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c8e6ea249ff0234dbd109f095412586
+      internalID: 561661119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kirin sprite sheet 2_22
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 1443
+        width: 89
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ba2cc1c2f05d38498db2aa2642cb267
+      internalID: 1361796026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +1476,140 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Kirin sprite sheet 2_0: 1079730341
+      Kirin sprite sheet 2_1: -732282247
+      Kirin sprite sheet 2_10: -1277786217
+      Kirin sprite sheet 2_100: 905768414
+      Kirin sprite sheet 2_101: 1166988478
+      Kirin sprite sheet 2_102: 1771057156
+      Kirin sprite sheet 2_103: -1423836534
+      Kirin sprite sheet 2_104: 1788865313
+      Kirin sprite sheet 2_105: 1950235568
+      Kirin sprite sheet 2_106: 1015693821
+      Kirin sprite sheet 2_107: -876964884
+      Kirin sprite sheet 2_108: -700751008
+      Kirin sprite sheet 2_109: 91320836
+      Kirin sprite sheet 2_11: 1213530845
+      Kirin sprite sheet 2_110: -209138663
+      Kirin sprite sheet 2_111: -1396261435
+      Kirin sprite sheet 2_112: -1270717109
+      Kirin sprite sheet 2_113: 224897573
+      Kirin sprite sheet 2_114: 610835172
+      Kirin sprite sheet 2_115: -1057719672
+      Kirin sprite sheet 2_116: -2023401047
+      Kirin sprite sheet 2_117: -211359090
+      Kirin sprite sheet 2_118: 1031206011
+      Kirin sprite sheet 2_119: 311535091
+      Kirin sprite sheet 2_12: 780748232
+      Kirin sprite sheet 2_120: 1747271381
+      Kirin sprite sheet 2_121: -123348244
+      Kirin sprite sheet 2_122: 455603596
+      Kirin sprite sheet 2_123: 2061203004
+      Kirin sprite sheet 2_124: -851855394
+      Kirin sprite sheet 2_125: 483374796
+      Kirin sprite sheet 2_126: -1511340535
+      Kirin sprite sheet 2_127: -1827550837
+      Kirin sprite sheet 2_128: 1537296960
+      Kirin sprite sheet 2_129: 911906766
+      Kirin sprite sheet 2_13: -1433970548
+      Kirin sprite sheet 2_130: 993283471
+      Kirin sprite sheet 2_131: 1051315751
+      Kirin sprite sheet 2_132: 1002127335
+      Kirin sprite sheet 2_14: 204246296
+      Kirin sprite sheet 2_15: -524284760
+      Kirin sprite sheet 2_16: 2033519881
+      Kirin sprite sheet 2_17: -1446274967
+      Kirin sprite sheet 2_18: -109139715
+      Kirin sprite sheet 2_19: -415916763
+      Kirin sprite sheet 2_2: 406819082
+      Kirin sprite sheet 2_20: -421416903
+      Kirin sprite sheet 2_21: 561661119
+      Kirin sprite sheet 2_22: 1361796026
+      Kirin sprite sheet 2_23: -160391649
+      Kirin sprite sheet 2_24: 160829634
+      Kirin sprite sheet 2_25: -1013330235
+      Kirin sprite sheet 2_26: -1382332332
+      Kirin sprite sheet 2_27: -776406250
+      Kirin sprite sheet 2_28: 704505178
+      Kirin sprite sheet 2_29: 27764383
+      Kirin sprite sheet 2_3: -1724397908
+      Kirin sprite sheet 2_30: 1943537397
+      Kirin sprite sheet 2_31: 632731660
+      Kirin sprite sheet 2_32: -236345824
+      Kirin sprite sheet 2_33: 620579463
+      Kirin sprite sheet 2_34: -1427505554
+      Kirin sprite sheet 2_35: 10588495
+      Kirin sprite sheet 2_36: 1722061300
+      Kirin sprite sheet 2_37: 1208712496
+      Kirin sprite sheet 2_38: -101133757
+      Kirin sprite sheet 2_39: -1176697385
+      Kirin sprite sheet 2_4: 1638472703
+      Kirin sprite sheet 2_40: -1307573514
+      Kirin sprite sheet 2_41: -712737902
+      Kirin sprite sheet 2_42: 362493977
+      Kirin sprite sheet 2_43: -921154336
+      Kirin sprite sheet 2_44: -964497953
+      Kirin sprite sheet 2_45: 1943769387
+      Kirin sprite sheet 2_46: 41558639
+      Kirin sprite sheet 2_47: 274317036
+      Kirin sprite sheet 2_48: 2002155944
+      Kirin sprite sheet 2_49: 550427475
+      Kirin sprite sheet 2_5: -1158035285
+      Kirin sprite sheet 2_50: 753787478
+      Kirin sprite sheet 2_51: 1504635115
+      Kirin sprite sheet 2_52: -1066067581
+      Kirin sprite sheet 2_53: -1420483826
+      Kirin sprite sheet 2_54: -481635433
+      Kirin sprite sheet 2_55: -1824221387
+      Kirin sprite sheet 2_56: 151216356
+      Kirin sprite sheet 2_57: -841389870
+      Kirin sprite sheet 2_58: -1611852973
+      Kirin sprite sheet 2_59: -238444046
+      Kirin sprite sheet 2_6: 42183819
+      Kirin sprite sheet 2_60: -1957862285
+      Kirin sprite sheet 2_61: -1234465896
+      Kirin sprite sheet 2_62: 862212648
+      Kirin sprite sheet 2_63: 1419291680
+      Kirin sprite sheet 2_64: 150080819
+      Kirin sprite sheet 2_65: -1376513986
+      Kirin sprite sheet 2_66: -89747104
+      Kirin sprite sheet 2_67: 1650007294
+      Kirin sprite sheet 2_68: -1851726174
+      Kirin sprite sheet 2_69: 46322607
+      Kirin sprite sheet 2_7: -77753290
+      Kirin sprite sheet 2_70: 136656578
+      Kirin sprite sheet 2_71: -309124241
+      Kirin sprite sheet 2_72: 834313168
+      Kirin sprite sheet 2_73: 146311117
+      Kirin sprite sheet 2_74: 814874361
+      Kirin sprite sheet 2_75: -2114858612
+      Kirin sprite sheet 2_76: -295964913
+      Kirin sprite sheet 2_77: 754903816
+      Kirin sprite sheet 2_78: -160753813
+      Kirin sprite sheet 2_79: -546581489
+      Kirin sprite sheet 2_8: 941475304
+      Kirin sprite sheet 2_80: 932884002
+      Kirin sprite sheet 2_81: -553117576
+      Kirin sprite sheet 2_82: -751130899
+      Kirin sprite sheet 2_83: 924042490
+      Kirin sprite sheet 2_84: -1847216866
+      Kirin sprite sheet 2_85: 1779268319
+      Kirin sprite sheet 2_86: -825077085
+      Kirin sprite sheet 2_87: 180642624
+      Kirin sprite sheet 2_88: -1034601940
+      Kirin sprite sheet 2_89: 1756028758
+      Kirin sprite sheet 2_9: -675627704
+      Kirin sprite sheet 2_90: -1482152613
+      Kirin sprite sheet 2_91: 2083849510
+      Kirin sprite sheet 2_92: -2115126702
+      Kirin sprite sheet 2_93: -946293300
+      Kirin sprite sheet 2_94: -885898853
+      Kirin sprite sheet 2_95: 284688453
+      Kirin sprite sheet 2_96: -1421669417
+      Kirin sprite sheet 2_97: -1369073667
+      Kirin sprite sheet 2_98: 667203695
+      Kirin sprite sheet 2_99: 1531973416
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
