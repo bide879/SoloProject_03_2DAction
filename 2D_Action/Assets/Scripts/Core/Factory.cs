@@ -6,6 +6,7 @@ public class Factory : Singleton<Factory>
     GhostPool ghostPool;
     DashEffectPool dashPool;
     SkillEffectPool skillPool;
+    SkillHitEffectPool skillHitEffectPool;
     UltimateEffectPool ultimateEffectPool;
     MarkPool markPool;
     Enemy_01_BulletPool enemy01_bulletPool;
@@ -20,6 +21,7 @@ public class Factory : Singleton<Factory>
         ghostPool = GetComponentInChildren<GhostPool>();
         dashPool = GetComponentInChildren<DashEffectPool>();
         skillPool = GetComponentInChildren<SkillEffectPool>();
+        skillHitEffectPool = GetComponentInChildren<SkillHitEffectPool>();
         ultimateEffectPool = GetComponentInChildren<UltimateEffectPool>();
         markPool = GetComponentInChildren<MarkPool>();
         enemy01_bulletPool = GetComponentInChildren<Enemy_01_BulletPool>();
@@ -30,6 +32,7 @@ public class Factory : Singleton<Factory>
         ghostPool?.Initialize();
         dashPool?.Initialize();
         skillPool?.Initialize();
+        skillHitEffectPool?.Initialize();
         ultimateEffectPool?.Initialize();
         markPool?.Initialize();
         enemy01_bulletPool?.Initialize();
@@ -60,6 +63,14 @@ public class Factory : Singleton<Factory>
         skill.transform.rotation = rotation;
         skill.transform.position = position;
         return skill;
+    }
+
+    public SkillHitEffect GetSpownSkillHitEffect(Vector3 position, Quaternion rotation)
+    {
+        SkillHitEffect skillHit = skillHitEffectPool?.GetObject();
+        skillHit.transform.rotation = rotation;
+        skillHit.transform.position = position;
+        return skillHit;
     }
 
     public UltimateEffect GetSpownUltimateEffect()

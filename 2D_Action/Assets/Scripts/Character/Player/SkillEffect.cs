@@ -43,6 +43,7 @@ public class SkillEffect : RecycleObject
                 {
                     enemy.markCount = 0;
                 }
+                Factory.Instance.GetSpownSkillHitEffect(other.transform.position, transform.rotation);
             }
         }
         else if (other.tag == "Mark")

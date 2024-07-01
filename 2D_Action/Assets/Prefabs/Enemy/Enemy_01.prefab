@@ -212,7 +212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 120
   moveSpeed: 0
-  maxHP: 100
+  maxHP: 120
   attackPower: 20
   defencePower: 0
   markCount: 0

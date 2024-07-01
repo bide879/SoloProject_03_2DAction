@@ -53,3 +53,6 @@ TagManager:
   - name: Ghost
     uniqueID: 1281257927
     locked: 0
+  - name: Effect
+    uniqueID: 2383633909
+    locked: 0
