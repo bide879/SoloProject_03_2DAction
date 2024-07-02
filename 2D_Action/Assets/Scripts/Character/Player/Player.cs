@@ -599,7 +599,14 @@ public class Player : MonoBehaviour, IBattler, IHealth
         moveSpeed = 0.0f;
         yield return new WaitForSeconds(0.3f);
         inputDirection = previousInputDirection;
-        moveSpeed = previousMoveSpeed;
+        if(previousMoveSpeed < 0.1f)
+        {
+            moveSpeed = normalSpeed;
+        }
+        else
+        {
+            moveSpeed = previousMoveSpeed;
+        }
         rigid.gravityScale = 2f;
         canJumpAttack = true;
         if (jumpCount > 1)
@@ -659,6 +666,11 @@ public class Player : MonoBehaviour, IBattler, IHealth
             {
                 Enemy_01_Bullet enemy01_Bullet = collision.GetComponent<Enemy_01_Bullet>();
                 Enemy_02_Bullet enemy02_Bullet = collision.GetComponent<Enemy_02_Bullet>();
+
+                BossAttack01Bullet boss01Bullet = collision.GetComponent<BossAttack01Bullet>();
+                BossAttack03Bullet boss03Bullet = collision.GetComponent<BossAttack03Bullet>();
+                BossAttack04Bullet boss04Bullet = collision.GetComponent<BossAttack04Bullet>();
+
                 if (enemy01_Bullet != null)
                 {
                     playerOnHit(enemy01_Bullet.damage);
@@ -666,6 +678,17 @@ public class Player : MonoBehaviour, IBattler, IHealth
                 else if (enemy02_Bullet != null)
                 {
                     playerOnHit(enemy02_Bullet.damage);
+                }else if (boss01Bullet != null)
+                {
+                    playerOnHit(boss01Bullet.damage);
+                }
+                else if (boss03Bullet != null)
+                {
+                    playerOnHit(boss03Bullet.damage);
+                }
+                else if (boss04Bullet != null)
+                {
+                    playerOnHit(boss04Bullet.damage);
                 }
             }
             else if (collision.tag == "EnemyAttackRange")

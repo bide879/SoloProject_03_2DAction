@@ -7,12 +7,12 @@ public class Enemy_01_Bullet : RecycleObject
     /// <summary>
     /// 총알의 이동 속도
     /// </summary>
-    private float moveSpeed = 7.0f;
+    private float moveSpeed = 8.0f;
 
     /// <summary>
     /// 총알의 수명
     /// </summary>
-    private float lifeTime = 5.0f;
+    private float lifeTime = 4.0f;
 
     public float forward = 1;
 

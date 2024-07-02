@@ -25,6 +25,9 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
                 Die();
             }
             enemyHPBar = Mathf.Clamp(hp/100,0,1);
+
+            hp = Mathf.Clamp(hp, 0, MaxHP);     // 최소~최대 사이로 숫자 유지
+            onHealthChange?.Invoke(hp / MaxHP);   // 델리게이트로 HP변화 알림
         }
     }
 
@@ -122,12 +125,14 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
     protected RaycastHit2D rayBackHit;
 
     //readonly int IsMoveHash = Animator.StringToHash("IsMove");
-    readonly int OnTurnHash = Animator.StringToHash("OnTurn");
-    readonly int OnAttackHash = Animator.StringToHash("OnAttack");
-    readonly int OnHitHash = Animator.StringToHash("OnHit");
-    readonly int OnDieHash = Animator.StringToHash("OnDie");
+    protected readonly int OnTurnHash = Animator.StringToHash("OnTurn");
+    protected readonly int OnAttackHash = Animator.StringToHash("OnAttack");
+    protected readonly int OnHitHash = Animator.StringToHash("OnHit");
+    protected readonly int OnDieHash = Animator.StringToHash("OnDie");
 
     private Vector3 enemyHPBarBGScale;
+
+    protected bool isBoss = false;
 
     protected virtual void Awake()
     {
@@ -141,8 +146,6 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
     protected virtual void Start()
     {
         EnemyHPBarBG.gameObject.SetActive(false);
-
-
         enemyHPBarBGScale = new Vector3(EnemyHPBarBG.localScale.x, EnemyHPBarBG.localScale.y, EnemyHPBarBG.localScale.z);
     }
     protected virtual void Update()
@@ -206,7 +209,7 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
 
     }
 
-    private IEnumerator OnUpdateCoolTime(float time)
+    protected IEnumerator OnUpdateCoolTime(float time)
     {
         yield return new WaitForSeconds(time);
     }
@@ -254,22 +257,35 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
     /// <param name="damage">내가 받은 순수 데미지</param>
     public void Defence(float damage)
     {
-        DefenceAddForce();
-        if (EnemyHPBarBG.gameObject)
+        if (!isBoss)
         {
-            EnemyHPBarBG.gameObject.SetActive(true);
+            DefenceAddForce();
+            if (EnemyHPBarBG.gameObject)
+            {
+                EnemyHPBarBG.gameObject.SetActive(true);
+            }
+            if (IsAlive)
+            {
+                isHit = true;
+                animator.SetTrigger(OnHitHash);
+
+                float final = Mathf.Max(0, damage - DefencePower);  // 0 이하로는 데미지가 내려가지 않는다.
+                HP -= final;
+
+                EnemyHPBar.localScale = new Vector3(enemyHPBar, 1, 1);
+                onHit?.Invoke(Mathf.RoundToInt(final));
+            }
         }
-        if (IsAlive)
+        else
         {
             isHit = true;
-            animator.SetTrigger(OnHitHash);
 
             float final = Mathf.Max(0, damage - DefencePower);  // 0 이하로는 데미지가 내려가지 않는다.
             HP -= final;
 
-            EnemyHPBar.localScale = new Vector3 (enemyHPBar, 1,1);
             onHit?.Invoke(Mathf.RoundToInt(final));
         }
+       
     }
 
     protected virtual void DefenceAddForce()
@@ -287,7 +303,7 @@ public class EnemyBase : MonoBehaviour, IBattler, IHealth
     /// </summary>
     public void Die()
     {
-        if (EnemyHPBar.gameObject)
+        if (EnemyHPBar.gameObject && !isBoss)
         {
             EnemyHPBarBG.gameObject.SetActive(false);
             EnemyHPBar.gameObject.SetActive(false);
